@@ -1,0 +1,44 @@
+# 直升机涡环状态建模仿真
+
+本项目用于整理并实现常规单主旋翼带尾桨直升机的涡环状态（VRS）建模与仿真路线。当前仓库处于阶段一资料整理完成、阶段二模型规格启动的状态。
+
+## 当前目标
+
+- 以课程资料为主线，建立直升机六自由度动力学、旋翼气动、诱导速度和 VRS 修正之间的建模关系。
+- 将 VRS 作为主旋翼入流和有效拉力异常来建模，而不是改变刚体动力学基本形式。
+- 为后续 Simulink、MATLAB 或 Python 实现准备环境无关的模型规格和验证场景。
+
+核心动力学接口暂按如下形式组织：
+
+$$
+\dot{x}=f(x,u,t)
+$$
+
+其中，$x$ 为状态向量，$u$ 为操纵输入，$t$ 为时间。坐标系和符号已按 [轴系与符号冻结约定](docs/axis-conventions.md) 冻结，后续可在此基础上展开具体方程和转移矩阵。
+
+## 项目入口
+
+- [项目总览](docs/SUMMARY.md)
+- [项目总体路线图](docs/project-roadmap.md)
+- [轴系与符号冻结约定](docs/axis-conventions.md)
+- [阶段二模型规格草案](docs/stage-2-model-spec-draft.md)
+- [验证路线图](docs/verification-roadmap.md)
+- [阶段一资料地图](docs/research/literature-map.md)
+- [建模依据整理](docs/research/modeling-basis.md)
+- [数据来源与验证依据](docs/research/data-sources.md)
+- [阶段二缺口数据补齐记录](docs/research/public-data/stage2-data-fill.md)
+
+## 当前硬约束
+
+- Markdown 中所有数学表达式必须使用 LaTeX。
+- 中俄轴系已冻结；英文教材公式只能作为源公式，必须完成轴系和符号转换后才能进入正式规格。
+- 当前不选择具体实现环境；先保留 Simulink、MATLAB 脚本和 Python 仿真的可选性。
+- 不补造目标机型参数、翼型气动表或真实 VRS 试飞数据。
+
+## 推荐工作顺序
+
+总体步骤见 [项目总体路线图](docs/project-roadmap.md)。当前项目处在“阶段二：模型规格冻结”，下一步是把状态向量、输入向量、六自由度方程接口和 VRS 接口从草案改成正式规格。
+
+## 当前状态
+
+仓库目前主要是文档资料库，并已有第一版数据种子和 sanity check 脚本。阶段二的下一件事是把资料转成可执行规格，并在进入完整数值模型前验证位置转换矩阵、悬停功率量级和 VRS 触发网格。

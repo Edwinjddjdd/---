@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "status": "draft_seed",
+    "created": "2026-06-27",
+    "purpose": "Initial public/course parameter seed for stage-two sanity checks. Values are not final aircraft design data.",
+    "rho_sea_level_kg_m3": 1.225,
+    "g_m_s2": 9.80665
+  },
+  "course_z11_hover_example": {
+    "source": "C:/Users/26534/xwechat_files/wxid_z0pxn6y38p3y22_ad23/msg/file/2026-06/5直升机的稳定飞行(1).pdf",
+    "mass_kg": 1360,
+    "main_rotor_radius_m": 4.0,
+    "main_rotor_tip_speed_m_s": 207,
+    "main_rotor_actual_power_kw": 205,
+    "main_rotor_shaft_height_above_cg_m": 2.5,
+    "tail_rotor_radius_m": 0.7,
+    "tail_rotor_arm_m": 4.66,
+    "tail_rotor_height_above_cg_m": 2.3,
+    "tail_rotor_tilt_deg": 20,
+    "tail_rotor_efficiency": 0.7,
+    "notes": "Course hover homework/example parameter set. Use for hover trim and power-scale checks."
+  },
+  "course_z11_hover_trim_result": {
+    "source": "C:/Users/26534/xwechat_files/wxid_z0pxn6y38p3y22_ad23/msg/file/2026-06/5直升机的稳定飞行(1).pdf",
+    "main_rotor_collective_deg": 7.8215,
+    "lateral_cyclic_deg": 0.0399,
+    "longitudinal_cyclic_deg": 0.0100,
+    "tail_rotor_collective_deg": 9.3530,
+    "pitch_angle_deg": 2.0345,
+    "roll_angle_deg": 3.1283,
+    "rotor_shaft_forward_tilt_deg": 2.0,
+    "notes": "Course hover trim output. Use as a direction and magnitude check for the first trim solver, not as target-aircraft data."
+  },
+  "z10_public_low_estimate": {
+    "source": "Deagel Z-10 page: https://www.deagel.com/aerospace%20forces/z-10/a001837",
+    "mass_kg": 7000,
+    "empty_weight_kg": 5100,
+    "main_rotor_radius_m": 6.0,
+    "main_rotor_blades": 5,
+    "tail_rotor_blades": 4,
+    "main_rotor_tip_speed_m_s": 210,
+    "engine_total_power_kw": 2386,
+    "notes": "Deagel lists 12 m main rotor diameter, 5100 kg empty weight, 7000 kg max takeoff weight and 3200 hp takeoff power. Tip speed is still an assumed value for first-pass hover checks."
+  },
+  "z10_public_high_estimate": {
+    "source": "Secondary public specifications sometimes report 13 m rotor diameter and 8 t class mass; keep as sensitivity case only. Reference pages: https://www.army-technology.com/projects/z-10-attack-helicopter/ and https://www.militarytoday.com/helicopters/z10.htm",
+    "mass_kg": 8000,
+    "main_rotor_radius_m": 6.5,
+    "main_rotor_tip_speed_m_s": 210,
+    "engine_total_power_kw": 2400,
+    "notes": "Uses 13 m rotor diameter and 8 t class mass as a high public estimate."
+  },
+  "d6075_vrs_reference_model": {
+    "source": "Wayne Johnson, NASA TP-2005-213477, Table 5 D6075 helicopter model.",
+    "main_rotor_radius_m": 5.97,
+    "solidity": 0.085,
+    "blade_chord_m": 0.4,
+    "number_of_blades": 4,
+    "twist_deg": -10,
+    "lock_number": 6.6,
+    "blade_mass_per_length_kg_m": 7.5,
+    "notes": "Use as VRS reference rotor geometry, not as the project target aircraft."
+  },
+  "airfoil_seed": {
+    "airfoil": "NACA 0012",
+    "coordinate_file": "data/public/naca0012-uiuc.dat",
+    "polar_file": "data/public/naca0012-airfoiltools-Re1e6.csv",
+    "coordinate_source_url": "https://m-selig.ae.illinois.edu/ads/coord/n0012.dat",
+    "polar_source_url": "http://airfoiltools.com/polar/csv?polar=xf-n0012-il-1000000",
+    "reason": "Publicly available symmetric airfoil data for first-pass blade-element sanity checks when actual rotor airfoil data is unavailable."
+  },
+  "vrs_seed_thresholds": {
+    "low_horizontal_speed_m_s": 12.0,
+    "descent_rate_trigger_m_s": 1.52,
+    "descent_rate_trigger_ft_min": 300,
+    "demonstration_low_airspeed_kt": 10,
+    "power_required": true,
+    "source": "FAA Helicopter Flying Handbook Chapter 11 and Wayne Johnson NASA TP-2005-213477.",
+    "notes": "Draft engineering trigger based on FAA VRS entry conditions: powered vertical or near-vertical descent, at least 300 ft/min descent, and airspeed below effective translational lift. The 12 m/s horizontal-speed gate is a conservative first-pass ETL-scale value; FAA demonstration text also cites less than 10 kt for training entry. Replace with calibrated Johnson boundary or test data when available."
+  }
+}

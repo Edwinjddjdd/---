@@ -1,0 +1,90 @@
+# 阶段一资料地图
+
+## 1. 资料分层
+
+本阶段资料分成四层：
+
+1. 课程基础层：你提供的 6 份直升机飞行力学课件。
+2. 经典教材层：Leishman、Padfield、Prouty、Wayne Johnson 等直升机气动、飞行动力学、性能稳定操纵和旋翼理论教材。
+3. 涡环专题层：FAA 与 NASA/旋翼文献中关于 VRS 的定义、边界、诱导速度模型和飞行动力学影响。
+4. 后续建模层：动态入流、叶素理论、配平、稳定性、飞行试验/风洞数据。
+
+课程资料解决“直升机怎么建模”；涡环专题资料解决“VRS 怎么进入、怎么修正、怎么验证”；动态入流资料解决“旋翼诱导速度如何从静态修正走向动态响应”。
+
+## 2. 课程资料地图
+
+| 资料 | 核心内容 | 对本项目的使用方式 |
+|---|---|---|
+| `1概述2026.pdf` | 飞行动力学范畴、平衡/稳定/操纵概念、常用坐标系、欧拉角、桨轴系 | 用于定义项目坐标系、状态量和基本术语 |
+| `2直升机的飞行操纵2026.pdf` | 总距、纵向周期变距、横向周期变距、尾桨总距、自动倾斜器、操纵分配 | 用于定义控制输入到旋翼/尾桨力矩的映射 |
+| `3直升机的挥舞运动2026.pdf` | 挥舞运动方程、吹风挥舞、操纵挥舞、随动挥舞、挥舞铰偏置 | 用于建立等效桨盘倾斜、桨毂力矩和操纵耦合依据 |
+| `4直升机的运动方程.pdf` | 刚体假设、六自由度方程、非线性运动方程、线性化、外力外矩闭合 | 用于建立机体动力学主方程 |
+| `5直升机的稳定飞行(1).pdf` | 旋翼动量理论、叶素理论、尾桨、平尾、垂尾、机身气动力、配平 | 用于建立外力/外矩计算模块和悬停/前飞配平 |
+| `6直升机稳定性.pdf` | 静稳定性、动稳定性、气动导数、稳定根、垂直/纵向/横向/航向阻尼 | 用于验证正常飞行段的响应合理性 |
+
+## 3. 经典教材资料地图
+
+| 资料 | 核心内容 | 对本项目的使用方式 |
+|---|---|---|
+| *Principles of Helicopter Aerodynamics* | 旋翼气动、动量理论、叶素理论、诱导速度和旋翼性能 | 用于补强主旋翼气动和 VRS 前后的入流解释 |
+| *Helicopter Flight Dynamics* | 直升机飞行动力学、飞行品质和仿真建模 | 用于补强六自由度仿真结构、状态量和验证方法 |
+| *Helicopter Performance, Stability, and Control* | 性能、配平、稳定性和操纵工程方法 | 用于补强配平、操纵量方向和稳定性验证 |
+| *Helicopter Theory* | 旋翼理论、挥舞、入流、载荷和高阶模型 | 用于补强旋翼/挥舞/入流模块的理论依据 |
+
+补充登记见 [supplementary-book-sources.md](supplementary-book-sources.md)。
+
+## 4. 外部 VRS 资料地图
+
+| 资料 | 类型 | 关键信息 | 用途 |
+|---|---|---|---|
+| FAA Helicopter Flying Handbook, Chapter 11 | 飞行安全手册 | VRS 是低前飞速度、有功率输入、垂直或近垂直下降时，主旋翼进入自身下洗和强涡结构的状态；典型诱发条件包括下降率至少约 300 fpm、20%-100% 功率、低于有效转换升力速度 | 用于建立 VRS 判据和飞行场景 |
+| Wayne Johnson, NASA TP-2005-213477 | NASA 技术报告 | 将 VRS 建成动量理论的参数扩展，可用于平均入流计算、实时仿真，并能解释直升机垂向速度突降 | 用于 VRS 修正模型主参考 |
+| Induced velocity model in steep descent and vortex-ring state | 论文 | 面向陡降和 VRS，发展经验诱导速度模型，并把 VRS 入口边界与诱导速度模型结合 | 用于补充下降飞行诱导速度模型 |
+| Dynamic inflow model comparison thesis | 学位论文 | 比较均匀入流、Payne、Pitt-Peters、Peters-He 等模型与叶素模型的集成 | 用于阶段二选择动态入流复杂度 |
+
+## 5. 后续阅读优先级
+
+### 必读
+
+1. `4直升机的运动方程.pdf`
+2. `5直升机的稳定飞行(1).pdf`
+3. Padfield, *Helicopter Flight Dynamics*
+4. Leishman, *Principles of Helicopter Aerodynamics*
+5. Wayne Johnson, *Model for Vortex Ring State Influence on Rotorcraft Flight Dynamics*
+6. FAA Helicopter Flying Handbook, Chapter 11, Vortex Ring State section
+
+### 次必读
+
+1. `3直升机的挥舞运动2026.pdf`
+2. `6直升机稳定性.pdf`
+3. Johnson, *Helicopter Theory*
+4. Prouty, *Helicopter Performance, Stability, and Control*
+5. 动态入流模型比较资料
+
+### 辅助阅读
+
+1. `1概述2026.pdf`
+2. `2直升机的飞行操纵2026.pdf`
+3. 陡降/VRS 诱导速度经验模型文献
+
+## 6. 文献链条
+
+当前可建立的文献链为：
+
+```text
+直升机基础飞行力学
+  -> 六自由度刚体运动方程
+  -> 旋翼/尾桨/机身/尾翼外力外矩
+  -> 动量理论 + 叶素理论
+  -> 动态入流/诱导速度模型
+  -> 低速大下降率下的 VRS 判据
+  -> VRS 诱导速度/拉力修正
+  -> 进入/改出仿真与验证
+```
+
+## 7. 资料引用
+
+- FAA Helicopter Flying Handbook, Chapter 11: <https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/helicopter_flying_handbook/hfh_ch11.pdf>
+- Wayne Johnson, NASA TP-2005-213477: <https://rotorcraft.arc.nasa.gov/Publications/files/Johnson_TP-2005-213477.pdf>
+- Induced velocity model in steep descent and vortex-ring state: <https://dspace-erf.nlr.nl/server/api/core/bitstreams/b15977ea-0bd0-44bd-8a28-6969c08a5ddf/content>
+- Dynamic inflow model comparison: <https://open.metu.edu.tr/bitstream/handle/11511/25959/index.pdf>

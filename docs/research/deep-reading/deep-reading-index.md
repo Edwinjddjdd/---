@@ -1,0 +1,32 @@
+# 阶段一深度阅读索引
+
+## 1. 当前阅读目标
+
+本轮深度阅读服务“阶段一二重新开始”，优先回答四个问题：
+
+1. 本项目采用的中俄轴系到底如何定义？
+2. 六自由度刚体方程应如何在该轴系下书写？
+3. 主旋翼入流、叶素/动量理论和挥舞如何进入仿真结构？
+4. VRS 应如何判别、修正和验证？
+
+## 2. 已完成
+
+| 日期 | 资料 | 产出 |
+|---|---|---|
+| 2026-06-26 | Padfield, *Helicopter Flight Dynamics* | [padfield-phase-one-deep-reading.md](padfield-phase-one-deep-reading.md) |
+| 2026-06-26 | Leishman, *Principles of Helicopter Aerodynamics* | [leishman-vrs-flow-states-deep-reading.md](leishman-vrs-flow-states-deep-reading.md) |
+
+## 3. 待读资料队列
+
+| 优先级 | 资料 | 处理方式 | 阅读目标 |
+|---|---|---|---|
+| P0 | 课程资料第 1、4 章原 PDF | 等用户补充原件或从本地定位 | 冻结中俄轴系、姿态角、速度分量和力矩正方向 |
+| P1 | Leishman, *Principles of Helicopter Aerodynamics* | 已开始页图阅读 | 动量理论、叶素理论、下降飞行入流 |
+| P1 | Johnson, *Helicopter Theory* | 当前 PDF 无文本层，需 OCR/页图阅读 | 旋翼理论、挥舞、入流和高阶模型 |
+| P2 | Prouty, *Helicopter Performance, Stability, and Control* | 当前 PDF 无文本层，需 OCR/页图阅读 | 配平、操纵、性能和工程估算 |
+
+## 4. 当前硬约束
+
+- 所有阶段二模型规格必须使用项目冻结后的中俄轴系。
+- 英文教材公式只能作为源公式，必须写明轴系转换后才能进入项目规格。
+- Markdown 中所有数学表达式必须使用 LaTeX。
