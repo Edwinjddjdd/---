@@ -65,7 +65,7 @@
 | 翼型气动表缺失 | 已下载 NACA 0012 坐标和 $Re=10^6$ 极曲线作为临时代用 | 接入目标旋翼翼型极曲线 |
 | 尾桨/尾翼干扰模型缺失 | 初版使用简化力和力矩 | 加入主旋翼下洗干扰 |
 
-详细数据补齐记录见 [阶段二缺口数据补齐记录](research/public-data/stage2-data-fill.md)。
+详细数据补齐记录见 [阶段二缺口数据补齐记录](../一、理论基础与文献调研/十、公开数据说明/阶段二缺口数据补齐记录.md)。
 
 ## 6. 验收门槛
 
@@ -80,8 +80,8 @@
 
 ## 7. 与研究资料的对应关系
 
-- 判据来源见 [数据来源与验证依据](research/data-sources.md)。
-- 建模模块依据见 [建模依据整理](research/modeling-basis.md)。
-- 文献链条见 [阶段一资料地图](research/literature-map.md)。
-- Johnson VRS 修正思路见 [Wayne Johnson VRS 模型笔记](research/paper-notes/wayne-johnson-vrs-model.md)。
-- 入流模型取舍见 [动态入流模型笔记](research/paper-notes/dynamic-inflow-models.md)。
+- 判据来源见 [数据来源与验证依据](../一、理论基础与文献调研/五、数据来源与验证依据.md)。
+- 建模模块依据见 [建模依据与技术路线](../一、理论基础与文献调研/四、建模依据与技术路线.md)。
+- 文献链条见 [阶段一资料地图](../一、理论基础与文献调研/一、阶段一资料地图.md)。
+- Johnson VRS 修正思路见 [Wayne Johnson VRS 模型笔记](../一、理论基础与文献调研/八、专题文献笔记/Wayne%20Johnson涡环状态模型笔记.md)。
+- 入流模型取舍见 [动态入流模型笔记](../一、理论基础与文献调研/八、专题文献笔记/动态入流模型笔记.md)。
