@@ -1,0 +1,1405 @@
+直升机涡环状态边界风洞试验研究
+王畅 马帅 黄志银 王浩文 黄志远 邓皓轩
+A wind tunnel investigation of the helicopter vortex ring state boundary
+WANG Chang, MA Shuai, HUANG Zhiyin, WANG Haowen, HUANG Zhiyuan, DENG Haoxuan
+
+引用本文:
+王畅, 马帅, 黄志银, 等. 直升机涡环状态边界风洞试验研究[J]. 实验流体力学, 2023, 37(5): 76-92. DOI: 10.11729/syltlx20220055
+WANG Chang, MA Shuai, HUANG Zhiyin, et al. A wind tunnel investigation of the helicopter vortex ring state boundary[J]. Journal of Experiments in Fluid
+Mechanics | J Exper Fluid Mech, 2023, 37(5): 76-92. DOI: 10.11729/syltlx20220055
+
+
+在线阅读 View online: https://doi.org/10.11729/syltlx20220055
+
+
+
+
+您可能感兴趣的其他文章
+Articles you may be interested in
+
+
+直升机漂浮特性试验技术研究
+Research on test technology of helicopter floating characteristics
+实验流体力学. 2020, 34(4): 30-35 https://doi.org/10.11729/syltlx20190078
+
+直升机旋翼模型结冰风洞试验技术
+Research on icing wind tunnel test technology of helicopter rotor model
+实验流体力学. 2021, 35(4): 60-66 https://doi.org/10.11729/syltlx20200121
+
+直升机防除冰系统人工结冰试验
+Artificial icing tests of the helicopter anti-icing system
+实验流体力学. 2019, 33(5): 64-69 https://doi.org/10.11729/syltlx20180077
+
+基于双目立体视觉的直升机旋翼桨叶位移变形测量方法
+Displacement and deformation measurements of helicopter rotor blades based on binocular stereo vision
+实验流体力学. 2020, 34(1): 87-95 https://doi.org/10.11729/syltlx20190071
+
+旋翼悬停状态桨尖涡测量方法研究
+Blade tip vortex measurements of a hovering rotor
+实验流体力学. 2017, 31(4): 39-44 https://doi.org/10.11729/syltlx20160186
+
+鱼游动涡结构PIV实验研究
+PIV experimental study on fish swimming vortex structure
+实验流体力学. 2020, 34(5): 20-28 https://doi.org/10.11729/syltlx20200039
+ 第 37 卷     第5期                           实      验     流    体      力     学                                    Vol.37，No.5
+ 2023 年 10 月                          Journal of Experiments in Fluid Mechanics                                  Oct.，2023
+
+
+文章编号：1672-9897(2023)05-0076-17                                                                    doi：10.11729/syltlx20220055
+
+
+
+                       直升机涡环状态边界风洞试验研究
+                               王畅 1, 2，马帅 2，黄志银 2，王浩文 1，黄志远 2, *，邓皓轩 2
+                                         1. 清华大学 航天航空学院，北京                 100084
+                            2. 中国空气动力研究与发展中心 低速空气动力研究所，绵阳                                621000
+
+          摘要：本文对直升机涡环状态边界进行了系统的分析与研究。首先，剖析了涡环状态事故的成因，阐述了其在飞行特性、
+      旋翼性能、桨盘入流、涡系结构等方面的物理机制，指出涡环状态下安全隐患的主要诱因是桨尖涡受挤压形成集中涡，使桨盘
+      面上诱导入流相对垂向来流占优，造成旋翼拉力负阻尼与性能损失，导致浮沉运动失稳。然后，对比了各类涡环状态边界的差
+      异性和适用性，指出现有边界预测模型存在建模方式主观性强和试验数据离散度高的问题，并提出了改进思路。最后，设计并
+      开展了模拟下降飞行的旋翼风洞试验。试验结果显示：涡环状态下出现了旋翼拉力负阻尼、拉力损失和功率沉陷现象，旋翼拉
+      力损失最高达 30%，旋翼产生维持机体重量拉力的需用功率约为悬停功率的 160%。以特情防范实践中关注的旋翼拉力负阻
+      尼和拉力性能损失为指标，从试验结果中提取了涡环状态边界临界速度离散点。在涡环状态边界预测模型构建中区分水平来
+      流、垂向来流和诱导入流对桨尖涡驱动作用的强弱，并计入不同前进比下动量理论的修正和桨尖涡运动阈值的差异，基于试
+      验值采用最小二乘法确定了模型参数，建立了半经验化的涡环状态边界预测模型，模型预测结果与风洞试验结果吻合较好，
+      且符合飞行试验规律。本文对认识涡环状态特情和预防涡环状态事故具有现实意义。
+          关键词：涡环状态；直升机；飞行特情；风洞实验；桨尖涡
+          中图分类号：V212.4             文献标识码：A
+
+
+        A wind tunnel investigation of the helicopter vortex ring state boundary
+                     WANG Chang1, 2，MA Shuai2，HUANG Zhiyin2，WANG Haowen1，
+                               HUANG Zhiyuan2, *，DENG Haoxuan2
+                      1. School of Aerospace Engineering, Tsinghua University, Beijing   100008, China
+
+                         2. Low Speed Aerodynamics Institute, China Aerodynamics Research and
+
+                                      Development Center, Mianyang     621000, China
+
+           Abstract: The helicopter vortex ring state boundary is systematically analyzed and studied in
+      this paper. Firstly, the causes of vortex ring state accidents are analyzed, and the physical
+      mechanisms in flight characteristics, rotor performance, rotor inflow, and vortex structure are
+      expounded. The formation of concentrated vortex causes the induced inflow to dominate the
+      vertical inflow on the rotor disk, causing negative damping of rotor thrust and loss of rotor
+      performance, and as a result the instability of subsidence motion. Then, the differences and
+      applicability of various vortex ring state boundaries are compared, the problems of the existing
+      boundary prediction models with strong subjectivity in modeling methods and high dispersion of
+      test data are concluded, and improvement ideas are proposed. Finally, on the basis of the above
+      knowledge, a rotor wind tunnel test to simulate the descending flight was designed and carried
+      out. The test results show that the rotor thrust negative damping, thrust loss and power
+      subsidence phenomenon are presented in the vortex ring state, the rotor thrust loss is up to 30%,
+      and the required power is about 160% of the hovering power when the rotor generates the same
+      thrust as hover; using the negative damping of rotor thrust and the loss of thrust performance,
+
+收稿日期：2022-06-27 ；修回日期：2022-08-26 ；录用日期：2022-10-13
+基金项目：国家自然科学基金面上项目（11672323）
+* 通信作者 E-mail：doheheyzh@sina.com
+
+引用格式：王畅, 马帅, 黄志银, 等. 直升机涡环状态边界风洞试验研究 [J]. 实验流体力学, 2023, 37(5): 76-92.
+     WANG C, MA S, HUANG Z Y, et al. A wind tunnel investigation of the helicopter vortex ring state boundary[J]. Journal of
+     Experiments in Fluid Mechanics, 2023, 37(5): 76-92.
+    第 5期                              王畅等： 直升机涡环状态边界风洞试验研究                                                                    77
+
+
+      which are concerned in the practice of flight emergency, as the defining index, the discrete points
+      of the critical velocity at vortex ring state boundary are extracted from the test results; in the
+      construction of the vortex ring state boundary model, the strength of the horizontal inflow, the
+      vertical inflow and the induced inflow on the rotor tip vortex is distinguished, and the correction
+      of the momentum theory under different advance ratios and the difference of the rotor tip vortex
+      motion threshold are taken into account. On the basis of the model parameters determined by the
+      least squares method based on the test values, a semi-empirical vortex ring state boundary
+      prediction model is established, and the model is in good agreement with the wind tunnel test
+      results and in line with the trend of flight test results.
+           Keywords: vortex ring state; helicopter; flight emergency; wind tunnel experiment; blade tip
+      vortex
+
+
+                                                          旋翼涡环状态边界模块是该系统的重要组成部分。
+0    引     言
+                                                                   截至目前，各国航空研究机构制定的旋翼涡环
+     直升机具有低空机动性好、部署灵活度高、受地                                状态边界已有数十种[13]，其中高−辛边界[14-16]、ONERA
+理空间限制较少等特点，已成为纵深渗透、战场机                                    边界 [17-18]、NASA[19-20] 边界（图 1，VX 为飞行速度沿旋
+降、垂直登陆、物资运输、搜索营救等特种任务中不                                   翼桨盘的分量；VY 为飞行速度沿旋翼轴的分量，向
+可或缺的重要航空装备。垂直起降和短距起降是直                                    下飞行为负；vh 为旋翼等效悬停诱导速度。）已在险
+升机的特长之一，可以使直升机展开任务时不受地                                    情防范和事故分析中广泛应用。这 3 种边界不仅在
+形条件制约。然而，直升机在下降飞行中存在进入                                    临界速度上不尽相同，对许用下降率随前飞速度变
+                                          [1]
+涡环状态（vortex king stale, VRS）的隐患 ，影响直                      化的判断也有着相反观点。在实际应用中，对涡环
+升机飞行安全。                                                   状态边界的分析和各种涡环状态边界的差异困扰着
+     涡环状态发生在直升机垂直下降或小前飞速度                                 人们对飞行特情的预判及防范对策的导向。
+下降阶段，是相对来流挤压旋翼尾流导致旋翼空气                                                       0
+动力性能改变的一种特殊气动现象。直升机进入涡
+                                                                           –0.5
+环状态后，飞行特性通常表现为自主性加速下坠、振
+                                                                           –1.0
+动加剧、总距操纵失效 [2]，若缺乏足够离地高度和有
+                                                                   VY/vh
+
+
+
+
+效处置，直升机可能坠毁。不同构型和吨位的直升                                                     –1.5
+
+机 均 发 生 过 涡 环 状 态 事 故 ， 如 V−22 倾 转 旋 翼 机                                   –2.0
+                                                                                                                高–辛边界
+                                                                                                                ONERA 边界
+                     [3]
+2000 年在美国坠毁 ，R66 轻型直升机 2016 年在中                                                                                 NASA 边界
+                                                                           –2.5
+                                                                                  0   0.2   0.4    0.6    0.8     1.0   1.2
+国 （ 黑 龙 江 ） 坠 江 ， Bell 412 中 型 直 升 机 于 2003 和                                                     VX/vh
+2012 年 分 别 在 瑞 典 [4] 和 日 本 [5] 坠 毁 ， AS332 中 型 直
+                                                                               图 1 3 种涡环状态边界对比
+升机于 2013[6] 和 2020[7] 年在法国坠毁，Mi–8T 大型                     Fig. 1    Comparison of three kinds of vortex ring state boundaries
+                                                                    commonly used in Engineering
+直升机 2008 和 2014 年分别在中国（内蒙古）和俄罗
+斯 [8] 发生事故，Mi–26T 重型直升机 2018 年在俄罗                                  涡环状态边界在特情防范对策判定 [21-23]、预警系
+斯坠毁 [9]。此外，尾桨在遭遇与其尾流方向相反的来                                统开发 [24-30]、事故原因分析 [4-9] 等领域已经得到较多
+流干扰时，也会因类似原因产生尾桨涡环状态 [10]，我                               关注。相比之下，关于各类边界的划定原理、偏差原
+国某型直升机 2018 年和 2019 年连续发生了 2 起因                           因和适用范围的深入探讨较少。虽然研究者对涡环
+                              [11]
+尾桨涡环状态导致的坠机事故                     。                       状态下的旋翼气动机理已逐步达成了共识 [31-35]，但鲜
+     避免直升机涡环状态事故的前提是准确划定旋                                 有研究从事故预防角度对风险关联物理机制进行考
+翼涡环状态边界，即确定旋翼涡环状态发生和消失                                    量。在现代战争突发性、快速性、立体性和破坏性增
+时的临界飞行速度，指导飞行员避免操纵直升机进                                    强的趋势下，对直升机的快速部署能力和战场生存
+               [1]
+入 该 速 度 区 域 。 随 着 航 电 技 术 的 发 展 ， H160 等 新                能力提出了更高要求，下降飞行快速机动性能的重
+                                                  [12]
+型直升机搭载了涡环状态自动预警和干预系统                                  ，   要性更加突出，涡环状态边界存疑使得预防风险和
+    78                                             实   验   流   体   力       学                   http://www.syltlx.com
+
+
+积极发挥机动性能之间的矛盾更加凸显。在这种形                                         态的飞行操纵与响应特征，探究与风险相关的飞行
+势下，一方面要加强对涡环状态风险因素、边界功                                         动力学机制。
+能、气动机理、各边界差异本质原因等的深入理解，                                        1.1 涡环状态风险因素与边界功能分析
+以免对涡环边界机械应用；另一方面，亟须发展与风                                        1.1.1       涡环状态飞行事故调研
+险防范需求相契合且具有较高置信度的边界模型。                                                 研究了引言中列举的 6 起事故的官方调查报
+                                                                   [4-9]
+         基于以上背景，为加深对涡环边界特情发生机                                  告        ，因这些事故原因大多类似，仅介绍其中 2 例。
+制的认识和加强事故预防，本文着眼于涡环状态边                                                 案 例 1[5]： 2003 年 3 月 25 日 ， 瑞 典 国 防 军 一 架
+界在风险预防中的实际指示功能，探讨其界定准则、                                        Bell 412 中型直升机在结冰湖面地区开展医疗救援
+物理机制和量化表征；回顾各类边界的起源，讨论其                                        科目训练，在第 9 个架次着陆过程中，直升机以很高
+适用范围和局限性；设计并实施相关风洞试验，建立                                        的下降速度坠毁。
+半经验化涡环状态边界预测模型。                                                        事故调查委员会还原的飞行数据记录仪显示：
+                                                               事故架次从零前飞速度至坠地仅用时 11 s，而常规
+1        涡环状态风险因素与飞行力学机制
+                                                               操纵流程耗时约 31 ～ 61 s。坠地前 3 s，直升机下降
+         对涡环状态的内涵进行科学准确的解读是本文                                  速度已超过−0.75vh，1 s 后机组才意识到直升机下降
+研究工作的起点。目前国际上尚未对涡环状态形成                                         速度过大而采取拉起措施，但此时离地仅20 m，未能
+明 晰 、 可 量 化 的 定 义 。 “ 涡 环 状 态 ” 一 词 最 初 由 De                   成功处置险情。该事故主要原因是飞行员的注意力
+             [36]
+Bothezat            于 20 世纪初提出，用以表征下降飞行时                       分散，在意识到直升机下降速度过高而进入涡环状
+向上穿过旋翼的自由来流与向下的尾流相互作用而                                         态前一直在减小旋翼总距。
+形成的环形流动现象。该现象在美国《海军航空器训                                                案 例 2[8]： 2014 年 9 月 4 日 ， 俄 罗 斯 一 架 Mi –8T
+练 与 操 纵 规 范 》 [37] 中 被 称 为 “ 功 率 沉 陷 ” （ power                 直升机在机场着陆过程中高速撞击地面，侧面副油
+settling），指需用功率超过直升机额定功率的情况。                                   箱破裂引起火灾。
+                            [38]
+美国《陆军飞行基础》                         及 FAA（ Federal Aviation             根据俄罗斯国家间航空委员会的调查：在坠地
+Administration）在 2012 年之前出版的《直升机飞行                             前 7 s，直升机离地高度仅为 50 m 且垂直下降速度
+          [39]
+手册》              中 使 用 了 “ 带 功 率 下 沉 ” （ settling with         超 过 −8 m/s， 此 时 飞 行 员 将 旋 翼 总 距 从 7.5°提 升 至
+power）的术语，即：尽管使用了全部可用功率，直升                                     10°，旋翼转速降低至原来的 88.9%；而后飞行员进一
+机仍保持下降。目前，各机构倾向于统一使用“涡环                                        步提升了总距，直升机以 6°俯仰角姿态垂直下坠，与
+状态”这一术语。加拿大交通部于 2006 年将“带功率                                    地面撞击前的下降速度约为−5.5 m/s。该事故主要
+                                       [40]
+下沉”从《直升机飞行训练手册》                            中删除；FAA 新修          原因是直升机在后飞转入降落的减速过程中进入了
+                             [41]
+订的《直升机飞行手册》                         中单独使用了“涡环状态”               涡环状态：一方面，机体俯仰角急剧变化至−12.5°，导
+一词，其定义为“直升机以 20% ～ 100% 的可用功率                                  致垂直于旋翼桨盘向上的气流分量显著增加；另一
+垂直下降且爬升能力很小或丧失的空气动力学                                           方面，在此过程中，旋翼的总距过低，比悬停时低
+状态”。                                                           3°，最终导致了事故的发生。
+         以上术语从不同角度对涡环状态进行了定义，                                  1.1.2       涡环状态事故表现形式与边界功能分析
+但从事故预防角度而言，涡环状态应是由环状旋涡                                                 以上案例中，事故由突然加剧且难以通过提升
+流动结构所导致的某种风险，涡环状态边界则指示                                         总距来阻止的下降运动所触发，而振动加剧等现象
+了这种风险发生的范围。为此，首先须明确这种风                                         并非事故直接原因。从预防坠机事故的目的出发，
+险的表现形式，人们在事故预防实践中希望风险边                                         应以前者为关键风险界定直升机进入涡环状态。
+界具备何种功能，以及如何依据这种功能对风险进                                                 在较高空域中，当直升机在快速下降等科目中
+行确定和划分。                                                        进入涡环状态时，需以直升机运动重新稳定、旋翼升
+         本节通过研究若干起涡环状态事故的调查报                                   力和操纵性能恢复的临界速度为参考，判断是否有
+告，辨别导致事故的风险因素，从实用性视角在现象                                        足够离地高度使直升机穿越涡环状态。从预判离开
+层面界定涡环状态边界；通过综述国内外直升机涡                                         涡环状态的目的出发，应以关键风险解除界定直升
+环状态飞行试验研究成果，梳理直升机穿越涡环状                                         机退出涡环状态。
+  第 5期                                                  王畅等： 直升机涡环状态边界风洞试验研究                                                                79
+
+
+1.2 直升机涡环状态飞行特性                                                            量级的总距激励下，下降速度大幅度增大；t ≈ 105 s
+1.2.1        浮沉运动速度不稳定性                                                    后，直升机经历速度过冲后以约−15 m/s 的下降速度
+         Reeder 和 Gustafson[42] 对 Sikorsky R4 直升机开                         维持匀速下降运动。Taghizad 等将上述过程中下降
+展了垂直下降状态的飞行试验，结果发现：下降速                                                     速度出现突增和恢复匀速时的临界飞行速度分别标
+度>−2.54 m/s 后，直升机的下降率非指令性急剧增                                               记为进入和离开涡环状态的边界速度。
+大，反映了浮沉运动速度的负阻尼态；下降速度>                                                     1.2.2      振动特性
+−7.62 m/s 后，可以操纵直升机保持稳定的下降飞行                                                        在 Reeder 和 Gustafson[42] 开 展 的 Sikorsky R−4
+速度和姿态。                                                                     直 升 机 垂 直 下 降 飞 行 试 验 中 ， 下 降 速 度 >−2.54 m/s
+         Taghizad 等 [18] 使 用 CEV（ 法 国 飞 行 试 验 中 心 ）                        后，直升机除垂向飞行速度失稳外，还伴随着滚转运
+Dolphin 6075（ 简 称 D6075） 直 升 机 开 展 了 下 降 状 态                               动和较强的偏航摆动。
+的飞行试验，这是目前公开文献中数据最全的直升                                                              陆洋等 [34] 使用 R22 直升机开展了涡环状态边界
+机涡环状态飞行测试项目。试验采取图 2 所示的前                                                   的飞行试验，发现机头开始出现航向摆动是直升机
+飞速度恒定、逐步增大下降速度的方式使直升机进                                                     进入涡环状态的首要特征，飞行实测的临界垂直下
+入涡环状态。图 3 为试验总距操纵与速度响应的时                                                   降速度为−0.39vh。
+间历程。从图 3 可以看出，随着下降速度增大，浮沉                                                           D6075 直升机以下降速度恒定、前飞速度逐步
+运动稳定特性的变化分为 3 个区间：从下降速度为                                                   降低的方式（图 4）进入涡环状态时，未出现直升机下
+0 的初始时刻起，随着总距小幅递减，下降速度略                                                    降速度突增的现象。图 5 为水平速度约7.7 m/s 的平
+增，并在约 6 s 内趋近匀速，体现出速度稳定性；t ≈                                               直飞行与涡环状态下 3 个轴向操纵的加速度时间历
+85 s，下降速度增至约−5 m/s，此后 20 s 内，在同等                                           程对比。在涡环状态下，俯仰、滚转与偏航姿态表现
+                        VY                                                 出大幅度振荡，即使施加往复修正操纵，机体仍具有
+                                                                           较大的加速度和角加速度。需要注意的是，直升机
+                                          飞行速度 V
+                                                             VX            以图 2 的飞行方式进入涡环状态后同样出现了较大
+                                                                           幅度的振动，但飞行员未能在下降率突增的过程中
+                                VRS                                        稳定直升机飞行高度，从而未能开展上述操纵修正
+                                                                           飞行姿态。Taghizad 等将振动显著增大的飞行速度
+                                                                           标记为直升机进入涡环状态的侧向边界速度 [18]。
+                                                                                           VY
+            图2          CEV 增大下降速度进入涡环状态的试飞方式[18]                                                                                 VX
+Fig. 2    Flight test mode with increasing descent speed to enter vortex
+          ring state applied by CEV[18]
+                                                                                                                         飞行速度 V
+                      7.0
+             总距/(°)
+
+
+
+
+                      6.5
+                      6.0
+                                                                                                                        VRS
+                      5.5
+                            0        20   40      60    80          100
+
+                       10
+         前飞速度/
+
+
+
+
+                                                                                       图 4 CEV 降低前飞速度进入涡环状态的试飞方式[18]
+          (m·s–1)
+
+
+
+
+                        5                                                  Fig. 4    Flight test mode with reducing forward speed to enter vortex
+                        0                                                            ring state applied by CEV[18]
+                            0        20   40      60    80          100
+                                                                                    Stewart[43] 对 Sikorsky R–4B、R–6、S–51， Bell
+                        0
+         下降速度/
+
+
+
+
+                                6s                           85 s          47 和 Bristol 171 等 5 种机型开展了飞行试验，对比
+          (m·s–1)
+
+
+
+
+                       –5
+                      –10
+                      –15                                                  了 它 们 在 −2.54 ～ −7.62 m/s 垂 直 下 降 速 度 区 间 的
+                            0        20   40     60     80          100    飞行特性。Sikorsky R–4B 表现出的失控程度和沿
+                                               时间 t/s
+                                                                           俯 仰 、 滚 转 、 偏 航 方 向 的 振 动 最 为 剧 烈 ； Sikorsky
+  图3        穿越涡环状态过程中总距、前飞速度、下降速度的时间历程[18]
+Fig. 3    Time history of collective pitch, forward flight speed and
+                                                                           S–51 的滚转振动较为剧烈，但偏航方向的振幅非常
+          descent speed during vortex ring state[18]                       小 ； Bell 47 在 偏 航 方 向 的 振 动 较 为 剧 烈 ， 但 可 保 持
+ 80                                                                                     实            验   流    体     力   学                                              http://www.syltlx.com
+
+                                       90                                                       70                                                   80
+                                                         Level flight
+                                                         Vortex-Ring
+                      纵向周期杆量/%
+
+
+
+
+                                                                               横向周期杆量/%
+
+
+
+
+                                                                                                                                    脚蹬位移量/%
+                                       80                                                       60                                                   70
+
+                                       70                                                       50                                                   60
+
+                                       60                                                       40                                                   50
+
+                                       50                                                       30                                                   40
+                                            0           20           40                              0         20           40                            0     20          40
+
+                                        4                                                        4                                                    4
+                      滚转角加速度/(m·s–2)
+
+
+
+
+                                                                               俯仰角加速度/(m·s–2)
+
+
+
+
+                                                                                                                                    偏航角加速度/(m·s–2)
+                                        2                                                        2
+                                                                                                                                                      2
+                                        0                                                        0
+                                                                                                                                                      0
+                                       –2                                                       –2
+
+                                       –4                                                       –4                                                   –2
+                                            0           20           40                              0         20           40                            0     20          40
+
+                                       20                                                       20                                                   20
+                  滚转角加速度/(m·s–2)
+
+
+
+
+                                                                           俯仰角加速度/(m·s–2)
+
+
+
+
+                                                                                                                                 偏航角加速度/(m·s–2)
+                                                                                                                                                     10
+                                        0                                                        0
+                                                                                                                                                      0
+                                   –20                                                      –20
+                                                                                                                                                  –10
+
+                                   –40                                                      –40                                                   –20
+                                            0         20             40                              0        20            40                            0    20           40
+                                                     时间 t/s                                                  时间 t/s                                           时间 t/s
+
+                                                              图5     平直前飞与涡环状态下操纵与加速度时间历程对比[18]
+                                            Fig. 5   Comparison of control and acceleration time history when entering vortex ring state[18]
+
+
+较稳定的俯仰姿态；Sikorsky R–6 和 Bristol 171 在测                                                                         浮沉方向速度阻尼是直升机进入涡环状态的重要判
+试速度区间内表现出比其他直升机更低的振动幅度。                                                                                        断指标。
+      从以上飞行实测结果可以看出：在涡环状态下，                                                                                             涡环状态风险消除后，直升机在更大下降速度
+各类机型直升机的振动方向和振动程度表现出较大                                                                                         下恢复了平衡状态。判断是否退出涡环状态，需综
+差异，采用振动值表征量化直升机涡环状态边界在                                                                                         合考虑直升机平衡性、稳定性的恢复情况。
+应用中可能存在普适性问题。
+                                                                                                                2       涡环状态旋翼气动性能特性与流动
+1.2.3   对总距操纵的响应
+                                                                                                                        机理
+      在 Stewart[43] 开 展 的 各 类 机 型 直 升 机 垂 直 下 降
+飞行对比试验中，大部分直升机进入涡环状态后对                                                                                                  在确定涡环状态边界的飞行动力学机制及关键
+总距操纵不敏感，仅有 Sikorsky R–6 和 Bristol 171                                                                          影响因素后，如何构建进入、退出涡环状态与飞行速
+能通过提升总距获得上升速度。                                                                                                 度的对应关系？这需要进一步从旋翼气动性能中了
+          [18]
+      CEV        开展的飞行试验中，也对 D6075 直升机                                                                         解飞行特性的变化原因，识别与涡环状态边界关联
+进入涡环状态后的总距操纵进行了测试。图 6 为涡                                                                                       的旋翼性能指标，从旋翼流动机理中探究其发生机
+环状态下飞行员提升总距后直升机响应的时间历                                                                                          制，总结飞行速度对其的影响。
+程：飞行员在 t ≈ 15 s 时小幅度提升总距，未能改变                                                                                   2.1 旋翼气动性能特性
+直升机下降速度增大的趋势，而在 t ≈ 20 s 时增大前                                                                                           涡环状态下旋翼气动性能的量化研究以实验室
+飞速度，使直升机的下降速度减小。                                                                                               测试为主。表 1 列出了国内外在此方面已开展的主
+1.2.4   涡环状态边界的飞行动力学机制                                                                                         要工作。本节从中选取了垂直下降时，总距恒定、由
+      前文关于直升机下降阶段操稳特性的飞行试验                                                                                     下降速度导致旋翼拉力和扭矩变化 [44]，以及旋翼拉
+研究表明：涡环状态事故发生的实质是下降速度的                                                                                         力恒定、由下降速度导致旋翼总距与需用功率变化
+负反馈调节机制失效、直升机浮沉运动速度失稳。                                                                                         这 2 种情况 [45] 分析旋翼气动性能与飞行特性的关联。
+ 第 5期                                                          王畅等： 直升机涡环状态边界风洞试验研究                                                                             81
+
+                          6.5                                                                                4
+
+
+
+
+                                                                                            纵向加速度/(m·s–2)
+                          6.0
+                                                                                                             2
+           总距/(°)
+
+
+                          5.5
+
+                          5.0
+                                                                                                             0
+                          4.5
+
+                          4.0                                                                               –2
+                                0     5            10          15        20        25                            0      5       10      15   20     25
+
+                                                                                                             5
+                           10
+
+
+
+
+                                                                                            横向加速度/(m·s–2)
+           飞行速度/(m·s–1)
+
+
+
+
+                            5
+
+                            0                                   平飞速度
+                                                                                                             0
+                                                                下降速度
+                           –5
+
+                          –10
+                                                                                                            –5
+                                0     5            10          15        20        25                            0      5       10      15   20     25
+
+                          800                                                                                2
+                                                                                            垂向加速度/(m·s–2)
+
+
+
+                                                                                                             1
+           发动机功率/kW
+
+
+
+
+                          600
+                                                                                                             0
+
+                                                                                                            –1
+                          400
+                                                                                                            –2
+
+                          200                                                                               –3
+                                0     5            10      15            20        25                            0      5       10      15   20     25
+                                                     时间 t/s                                                                       时间 t/s
+
+                                                               图6       涡环状态下直升机对总距提升的响应[18]
+                                          Fig. 6    Response of helicopter to collective pitch increase in vortex ring state
+
+                                                           表 1 国内外已开展的涡环状态旋翼性能测量试验
+                                                         Table 1 Tests of rotor performance in vortex ring state
+
+                                                        参考      桨叶       旋翼半径            旋翼转速
+        研究者                           时间                                                                              扭转角/(°)         下降姿态           试验环境
+                                                        文献      片数        /mm           /(r﹒min−1)
+
+   Castles、Gray                       1951              [45]        3    610、914        1 200、1 600                    0、−12          垂直下降         直径2.74 m风洞
+                                                                                    700～1 410、
+    Mort、Yaggy                        1963              [46]        3   1 448、1 829                                  −22.4、−46.6     斜下降、垂直下降            NFAC
+                                                                                     700～1 100
+Washizu、Azuma、Koo等                    1966              [47]        3      549             1 000                        −8.33        斜下降、垂直下降            滑轨
+
+   Azuma、Obata                        1968              [44]        3      550             1 000                        −8，0          垂直下降          直径3 m风洞
+
+  Empey、Ormiston                      1974              [48]        2      162            13 250                            0        斜下降、垂直下降     2.13 m × 3 m风洞
+
+     辛宏、高正                          1993-1996 [14-16]               2      549             1 406                     0、 −5.5、−9.22 斜下降、垂直下降              悬臂机
+
+      Betzina                         2001              [49]        3      610             1 800                        −41          斜下降、垂直下降            NFAC
+
+
+   图 7 为 文 献 [44] 中 旋 翼 总 距 分 别 固 定 为 8°、                                                   尼决定了直升机浮沉运动速度阻尼，解释了 1.2 节中
+10°、12°和 14°时，各风速下的旋翼拉力、功率与悬停                                                               介绍的飞行特征：由悬停进入低速下降时，旋翼拉力
+状态比值曲线。图中，Ct 为拉力系数，Cp 为功率系                                                                  具有正阻尼，对应于图 3 中 t < 85 s 前，总距小幅降
+数，Ct0 和 Cp0 分别为悬停状态下的拉力系数和功率                                                                低后，直升机在不断增大的下降速度中建立平衡的
+系数。可以发现：图 7（a）中，拉力随风速增大呈现较                                                                  过程；随着下降速度增大，旋翼出现了拉力负阻尼效
+为显著的增大→降低→增大规律，即旋翼拉力阻尼                                                                      应，拉力值显著降低，对应于 85 ～ 105 s 时，飞行员
+随下降速度具有正→负→正的变化过程；图 7（b）中，                                                                  未修正总距的情况下，直升机下降速度突增的过程；
+功率随风速变化的幅度总体相对较弱。旋翼拉力阻                                                                      下降速度进一步增大后，旋翼拉力阻尼恢复，同时拉
+  82                                                     实   验      流   体   力             学                                            http://www.syltlx.com
+
+
+力值大幅度增大，解释了 t ≥ 105 s 后，直升机在总                                                    值得注意的是，一些文献以拉力阻尼恢复为正
+距不变的情况下以‒15 m/s 的下降速度维持稳定飞                                              作为直升机退出涡环状态的依据 [19, 50]，但拉力阻尼
+行的过程。                                                                   恢复为正恰好发生在拉力损失或需用功率最大值
+                 3                                                      处，依旧处于功率沉陷的风险区。因此，本文认为以
+                                                                        旋翼总距与悬停状态总距相等时，旋翼拉力在较大
+                 2                                                      下降速度下恢复至悬停拉力（直升机总重）的状况判
+        Ct/Ct0
+
+
+
+
+                                                                        定直升机退出涡环状态更符合实际。
+                 1                                                                                     12
+                                                8° 总距                                                  10
+                                                10° 总距
+                                                12° 总距                                                  8
+                                                14° 总距                                                  6
+                 0
+
+
+
+
+                                                                                              总距/(°)
+                     0    –1         –2                 –3                                              4
+                               VY/vh
+                                                                                                        2
+                            （a）旋翼拉力
+                                                                                                        0
+                                                                                                       –2       Ct/σ = 0.04
+                 2                                                                                              Ct/σ = 0.08
+                                                                                                       –4
+                                                                                                                Ct/σ = 0.10
+                                                                                                       –6
+                                                                                                            0   –0.02   –0.04    –0.06 –0.08   –0.10   –0.12
+                                                                                                                                VY/(Ω·R)
+        Cp/Cp0
+
+
+
+
+                 1                                                                                                              （a）总距
+
+                                                                                                   4.8
+                                                8° 总距                                              4.0
+                                                10° 总距
+                                                12° 总距                                             3.2
+                                                14° 总距
+                 0
+                                                                                 ΔCp/(10–4)
+
+
+
+
+                                                                                                   2.4
+                     0    –1        –2                  –3
+                              VY/vh                                                                1.6
+                            （b）旋翼扭矩                                                                0.8
+
+图 7 垂直下降状态旋翼拉力和扭矩随等效下降速度变化（总距恒定）                                 [44]                                   0       Ct/σ = 0.04
+                                                                                                –0.8            Ct/σ = 0.08
+Fig. 7 Variation of rotor thrust and torque with equivalent descent
+                                                                                                                Ct/σ = 0.10
+       speed under vertical descent (constant collective pitch                                  –0.6
+       control)[44]                                                                                         0   –0.02   –0.04    –0.06 –0.08   –0.10   –0.12
+                                                                                                                                VY/(Ω·R)
+       图 8 为文献 [45] 总距配平试验中得出的旋翼恒                                                                               （b）相对于悬停零升状态的需用功率
+
+定拉力情况下总距和需用功率随风速的变化，σ 为旋                                                 图8             垂直下降阶段旋翼总距和功率随下降速度变化（拉力恒定）[45]
+                                                                        Fig. 8          Variation of rotor collective pitch and required power with
+翼实度，（ Ω · R）为桨尖速度，ΔCp 为当前试验状态与                                                          descent rate under vertical descent (constant thrust)[45]
+悬停零升力状态需用功率的差值。从图中可以看
+                                                                        2.2 桨盘入流特性
+出，在旋翼拉力维持不变时，总距和需用功率随风速
+                                                                                 旋翼进入涡环状态后性能变化的原因可能有
+变化趋势与图 7（a）所示的曲线具有负相关性。由悬                                               3种   [50]
+                                                                                        ：桨叶失速、桨盘处垂向气流速度为 0、桨叶剖
+停转入低速前飞时，总距和需用功率降低，符合                                                   面有效迎角降低。随着流场定量测试技术和旋翼流
+图 3 中 t ≈ 85 s 前的总距操纵规律。随着下降风速增                                         场数值模拟手段的发展，学者对涡环状态下旋翼流
+大，下降速度增大，旋翼总距和需用功率增大，呈现                                                 动的研究更加深入，桨叶剖面有效迎角降低是导致
+出总距反操纵的特性，符合进入涡环状态后带功率                                                  旋翼进入涡环状态后性能变化的主要原因已被学界
+下沉的情况；相应的，总距和需用功率增大至超过悬                                                 普遍接受。
+停状态下的总距和需用功率，符合功率沉陷的特                                                            图 9 为 Johnson[19] 综合大量试验数据构造的涡
+征。随着下降速度进一步增大，总距和需用功率呈                                                  环状态旋翼入流模型，该模型已在涉及涡环状态的
+现较大幅度的降低，在较大下降速度下已显著低于                                                  飞 行 仿 真 中 被 广 泛 采 纳 [51]。 图 中 ， 纵 坐 标 (Vy +
+悬停状态，直升机操纵裕度和功率裕度增大。                                                    v1)/vh 为 桨 盘 轴 向 入 流 ， v1 为 桨 盘 处 诱 导 速 度 。 观
+       基于以上分析可知，旋翼的拉力负阻尼效应及                                             察 Vx/vh = 0 的 情 况 可 以 看 出 ， 与 图 7（ a） 和 图 8 类
+对应出现的升力损失、需用功率增大诱发并加剧了                                                  似，随着下降速度增大，桨盘轴向入流变化也分为
+直升机浮沉运动速度失稳，是造成直升机进入涡环                                                  3 个阶段：垂直飞行速度降至 N 点前，桨盘轴向入流
+状态的直接原因。                                                                呈减小趋势，使桨叶剖面来流角降低，进而导致翼型
+ 第 5期                                                       王畅等： 直升机涡环状态边界风洞试验研究                                                                    83
+
+
+的有效迎角增大；在 N 点至 X 点的过程中，桨盘轴                                                                        v/(m·s–1) 2      8       14      20          10
+向入流呈增大趋势，与虚线代表的滑流理论结果趋                                                                   200
+
+势相反，桨叶剖面来流角随之增大，翼型有效迎角减
+                                                                                           0
+小，进而破坏了旋翼的拉力阻尼；在 X 点之后，轴向
+
+
+
+
+                                                                                 Y/mm
+入流迅速减小，翼型有效迎角随之增大，旋翼的拉力                                                                 –100
+阻尼和性能恢复。值得注意的是，在拉力恒定时，
+（VY+v1）表征了旋翼有效功率与诱导功率之和，因此                                                              –200
+
+其变化规律与图 8 一致。
+                                                                                               –1 400 –1 200 –1 000 –800 –600           –400
+                                                                                                                  X/mm
+                    2.0
+                                                                                                           （a）试验风速 3 m/s
+
+                    1.5
+                                                                                                  v/(m·s–1) 2      8       14      20          10
+                    1.0                      X           N D                             200
+
+                                            A
+                    0.5                                                                    0
+    (VY + v1)/vh
+
+
+
+
+                                                                                 Y/mm
+                     0                                                                  –100
+
+                   –0.5
+                                        E                                               –200
+
+                   –1.0
+                                                                                               –1 400 –1 200 –1 000 –800 –600           –400
+                                B                                                                                 X/mm
+                   –1.5
+                                                                                                           （b）试验风速 9 m/s
+
+                   –2.0
+                      –3.0   –2.5   –2.0    –1.5 –1.0    –0.5     0    –0.5
+                                                                                                  v/(m·s–1) 2      8       14      20
+                                               VX/v h                                                                                          10
+                                                                                         200
+                                            Momentum theory
+                                            Baseline, Vx /vh = 0
+                                            Baseline, Vx /vh = 0.75                        0
+                                            VRS model, Vx /vh = 0
+                                                                                 Y/mm
+
+
+
+
+                                            VRS model, Vx /vh = 0.75
+                                            VRS model, Vx /vh = 0.95                    –100
+                                            Transition points
+
+                          图 9 旋翼在涡环状态的入流模型[19]                                          –200
+                   Fig. 9 Inflow model of rotor in vortex ring state[19]
+                                                                                               –1 400 –1 200 –1 000 –800 –600           –400
+   图 10 为文献 [52] 中旋翼总距固定为 7.4°时，不                                                                                 X/mm
+                                                                                                           （c）试验风速 17 m/s
+同 垂 直 下 降 速 度 的 流 场 PIV 测 量 结 果 （ v 为 PIV 处
+                                                                                          图 10     垂直下降状态旋翼剖面速度矢量图[52]
+理得到的流场速度），随下降速度增大，旋翼拉力先
+                                                                                Fig. 10    velocity vector diagram in vertical descent state[52]
+小幅增大（图 10（a）），随后降至最低值（图 10（b）），
+最后恢复至悬停值（图 10（c））。可以看出，图 10（b）                                                的？这需要在桨尖涡空间演化特性中寻找答案。
+中桨盘入流强度显著高于图 10（a），而图 10（c）所示                                                   图 11 显示了由 Leishman[53] 和 Brown[54] 等通过
+的桨盘入流强度相较于图 10（b）已显著降低。                                                       时间推进自由尾迹计算给出的各飞行阶段下旋翼桨
+   综上所述，在下降飞行阶段，旋翼性能变化方向                                                      尖涡结构。在下降速度较低时（图 11（b）），下游的桨
+主要由桨盘轴向入流对桨叶剖面迎角的改变决定，                                                        尖涡线在自由来流的作用下被挤压，与悬停状态
+同时，（VY + v1）也表征了旋翼拉力恒定时的需用功                                                   （图 11（a））相比，桨尖涡的轴向结构变得更紧凑且更
+率，因而 d（VY + v1）/dVY 能同时表征旋翼拉力阻尼                                               趋近于旋翼桨盘，同时下游的涡线聚集形成了涡环
+性质和需用功率的变化情况。                                                                 结构。但这些效应对桨盘处诱导速度的影响有限，
+2.3 桨尖涡结构演化机理                                                                 不足以抵消自由来流对桨盘入流的减小作用，旋翼
+   在下降速度不断增大的背景下，旋翼桨盘的入                                                       入流值仍可保持随下降速度增大而减小的趋势。
+流是如何伴随向上增强的相对来流而出现增大趋势                                                          在下降速度达到旋翼进入涡环状态的边界速度
+84                                                 实       验   流    体     力     学                                http://www.syltlx.com
+
+
+
+
+                                                                                                                    “Bunding”
+                                                                                                                          of
+                                                                                                                       vortex
+                                                                                                                     filaments
+                                              Aperiodic                                                                  into
+                                              behavior                                                                “rings”
+                                             in far wake
+
+                    （a）悬停状态                                                                  （b）低速下降
+
+                                                    Vorticity
+                                                     passes
+                                                   through &
+                                                  accumulates
+      TPP                                           in TPP
+
+
+
+
+                                                 Vortexes ring
+                                                   becomes
+                                                   unstable
+                  （c）进入涡环状态                                                               （d）退出涡环状态
+
+                                                                 μ = 0.04, VX/vh = –0.4, αTPP = 15°, q = 0.04
+                                                                                                       Convection of ring vorticity
+                                                                                                        through rear of rotor disk
+
+
+            Windmill brake state, VX/vh = –2.5
+
+
+                                                                       Bundling of wake vorticity
+                                                                     and formation of “ring” vortex
+
+
+                    （e）风车状态                                                                （f）高前进比状态
+
+                                         图 11     下降飞行过程中桨尖涡的结构演化[53-54]
+                          Fig. 11   Structural evolution of blade tip vortex during descending flight[53-54]
+
+
+时（图 11（c）），进入涡环的桨尖涡线数量增多，其空                                           度对涡环状态边界的表征具有物理意义上的明确指
+间位置向桨盘传递，该集中涡结构产生的强烈下洗                                                示作用。
+作用逐渐超过自由来流影响，从而占据对旋翼流场
+                                                                      3       涡环状态边界研究现状
+的控制优势，桨盘入流因此呈增大趋势。当下降速
+度增至直升机退出涡环状态时的边界速度（图 11（d）），                                                  本节从推导过程、边界因素界定、阈值选取等方
+涡环向上运动至桨盘外侧，聚集程度变弱，对桨盘处                                               面对国内外已发展的涡环状态边界进行梳理回顾，
+流动的影响也随之减弱。下降速度进一步增至风车                                                分析总结工程界常用涡环状态边界之间的差异及其
+状态时（图 11（e）），桨尖涡的运动轨迹趋向上游，且                                           适用范围，提出进一步改进的方向。
+不再聚集。达到一定前飞速度时（图 11（f）），桨盘下                                                   按照构建方式的不同，本节将涡环状态边界模
+游聚集形成的集中涡在接近桨盘前即被水平来流                                                 型分为理论近似模型、使用试验数据修正的半经验
+吹离。                                                                   化模型和单纯由试验结果统计抽象的经验化模型。
+     基于以上分析，桨盘轴向入流变化趋势反映了                                             3.1 理论近似涡环状态边界
+自由来流与诱导速度对旋翼流场作用的竞争关系。                                                3.1.1      Wolkovitch 边界
+直升机进入涡环状态实质是桨尖涡在旋翼周围聚                                                         Wolkovitch[55] 以桨尖涡沿旋翼轴向运动速度达
+集，导致诱导速度在桨盘占优的结果。在以上过程                                                到阈值作为进入或退出涡环状态的判定条件。
+中，大尺度集中涡结构的聚集形成、集中涡与桨盘的                                                       旋翼桨尖涡构成了旋翼内侧入流与自由来流的
+相对位置关系、集中涡在较高前进比下无法生成等                                                分界面，假设其运动速度等于旋翼内侧入流与外侧
+关键因素均由桨尖涡的运动速度决定，而飞行速度                                                自由来流的平均值（图 12）。桨尖涡的垂向运动速度
+是桨尖涡运动的主要驱动力。因此，桨尖涡运动速                                                为 0 时，进入涡环状态：
+ 第 5期                                                         王畅等： 直升机涡环状态边界风洞试验研究                                                                                        85
+
+            VY                                                                                                 VY
+                                                                                                                              a
+                                                                Tip vortice                                                               |a| =VX2 + VY2
+                                                 Rotor disk
+                                                                                                                                  VX
+    VY + v1/2
+                           VY + v1
+                           Inner wake                                                                                     b
+                                                                                                                                          |b| =VX2 + (VY2 + v1)2
+                                                                                                     VY + v1
+                 图 12         Wolkovitch 对桨尖涡运动速度的假设            [55]
+
+
+Fig. 12         Wolkovitch's hypothesis on the velocity of blade tip vortex[55]                               图 14        Peters 对桨盘处流动的假设[59]
+                                                                                                   Fig. 14      Peters′ assumption of flow at the disc[59]
+                                    VY + v1 /2 = 0                           （1）
+                                                                                            ⇀       ⇀
+进一步得到进入涡环状态边界的表达式：                                                                 式中： a 、 b 分别为自由来流与旋翼尾流速度。
+                                        VY = −v1 /2                          （2）       在尝试沿用式（1）和（3）的思路对式（5）构建涡
+退 出 涡 环 状 态 时 ， 假 定 桨 尖 涡 向 上 运 动 ， 即 VY +                                         环 状 态 边 界 未 取 得 封 闭 后 ， Peters 借 鉴 了 Gessow
+v1 /2为负值。使用式（3）作为进入涡环状态边界的表                                                        等 [60] 的观点，将进入涡环状态边界的流动判据改为
+达式：                                                                                旋翼尾流与自由来流相反：
+
+                                    VY = −0.7v1                              （3）                                     VX2 + VY2 + v1 VY < 0                                （6）
+与基于滑流假设的动量理论（式（4））联立，即可得到                                                          在退出涡环状态边界的判据方面，沿用式（3）的思路
+分别满足式（2）和式（3）的进入与退出涡环状态边界。                                                         对式（5）设定了阈值：
+                                          vh2                                                                                           1         1   1
+                              v1 = √                                         （4）                          VY = −v1 −                       , V2 = 2 − 6                   （7）
+                                                    2                                                                                   v13 X    v1  v1
+                                    VX2 + (VY + v1 )
+                                                                                   将 式 （ 6） 和 （ 7） 与 动 量 理 论 （ 式 （ 4） ） 联 立 ， 得 到 如 图
+        图 13 中以虚线绘制了 Wolkovitch 边界，该边界
+                                                                                   15 所示的涡环状态边界。可以看出，在判别式中引
+一直延伸至大前进比下，与达到一定前飞速度时不
+                                                                                   入 前 飞 速 度 项 使 得 边 界 曲 线 在 VX/vh = 0.62 时 封
+会发生涡环状态的实际情况不符。但在小前进比下，
+                                                                                   闭，该值实际上对应于式（4）中诱导速度不再出现多
+其形态接近 Drees 等 [56-58] 依据旋翼流态划分的涡环
+                                                                                   解的情况。此外，在垂直下降状态一旦有下降速度
+状态边界，说明这种理论假设在一定程度上反映了
+                                                                                   即进入涡环状态的结论也与事实不符。
+旋翼流动机理，其推导思路被后续许多研究者借鉴。
+                                                                                                     0
+                   0
+                                                                                                   –0.5
+                –0.5
+                                                                                                   –1.0
+                                                                                           VY/vh
+
+
+
+
+                –1.0
+        VY/vh
+
+
+
+
+                                                                                                   –1.5
+                –1.5
+                                                                                                   –2.0
+                –2.0                                    Drees 边界                                                                                           Peters 边界
+                                                        Wolkovitch 边界                              –2.5
+                –2.5                                                                                      0         0.2           0.4    0.6   0.8    1.0     1.2   1.4
+                       0                 0.5            1.0            1.5                                                                 VX/vh
+                                               VX/vh
+                                                                                                                图 15 Peters 涡环状态边界[59]
+                    图 13 Wolkovitch 与 Dress 边界对比[55-56]                                              Fig. 15     Peters vortex ring state boundary[59]
+    Fig. 13        Comparison of Wolkovitch and Dress boundaries[55-56]
+                                                                                   3.1.3           Newman 边界
+3.1.2           Peters 边界
+                                                                                       与 Wolkovitch 和 Peters 使 用 不 同 表 达 式 对 涡
+        如图 14 所示，Peters 等 [59] 将桨尖涡运动速度假
+                                                                                   环状态上、下边界分别进行定义不同，Newman[61] 使
+设为自由来流速度在旋翼尾流方向的投影与旋翼尾
+                                                                                   用绝对值相同、方向相反的桨尖涡运动速度阈值表
+流速度之和：
+                                                                                   征 上 、 下 边 界 。 Newman 认 为 桨 尖 涡 运 动 主 要 由 旋
+⇀       ⇀                                               √
+a· b         V + V + v1 VY
+                 ⇀             2         2
+                                                                                   翼的尾流驱动，并考虑到桨尖涡聚集主要由轴向速
+      + |b|= √                 X        Y                                 2
+    ⇀                                                  + VX2 + (VY2 + v1 )
+  |b|          VX2 + (VY2 + v1 )
+                                 2
+                                                                                   度决定，于是对前飞速度进行加权，建立了涡环状态
+                                                                             （5）   边界理论判据（式（8））。式（8）与式（4）联立可得到
+ 86                                                                        实      验     流   体   力      学                                        http://www.syltlx.com
+
+
+如图 16 所示的涡环状态边界。                                                                            速度应为桨盘内、外侧流动速度的平均值，在
+       √                                                                                    Newman 的基础上，建立了涡环状态边界公式：
+                 2             2
+        (0.65VX ) + (VY2 + v1 ) = 0.74vh                                          （8）              √
+                                                                                                            2                2
+                                                                                                    (VX / k) + (VY2 + v1 / 2) = εvh （10）
+                  0
+
+                –0.5
+                                                                                            式中：VX/k 为桨尖涡水平速度，ε 为阈值系数。
+                                                                                                    通过匹配 1.2 节 CEV 飞行试验的数据， 确定 k
+                –1.0
+                                                                                            和 ε分别为 4 和 0.2，得到了如图 18 所示的涡环状态
+        VY/vh
+
+
+
+
+                –1.5                                                                        边界。在 ONERA 边界的构建中，式（10）须与 Taghizad
+                –2.0                                                                        建立的入流模型联合使用，而后者尚未公开。
+                                                          Newman 边界                                           0
+                –2.5
+                       0    0.2    0.4   0.6   0.8        1.0       1.2     1.4
+                                           VX/vh                                                            –0.4
+
+                       图 16 Newman 给出的涡环状态边界[61]                                                            –0.8
+
+
+
+
+                                                                                                    VY/vh
+      Fig. 16          State boundary of vortex ring given by Newman[61]
+                                                                                                            –1.2
+3.2 半经验化涡环状态边界
+                                                                                                            –1.6
+3.2.1           高−辛边界                                                                                                                 CEV Dolphin 6075 飞行试验
+                                                                                                                                      ONERA 边界
+                                                                 [14-16]
+      南京航空航天大学的高正和辛宏                                                       使用悬臂                             –2.0
+                                                                                                                   0            0.5               1.0          1.5
+机开展了旋翼下降状态模拟试验，发现在总距固定                                                                                                                  VX/vh
+
+的情况下，时均扭矩在−0.28vh 时开始随下降速度增                                                                                            图 18 ONERA 涡环状态边界[18]
+                                                                                                             Fig. 18    ONERA vortex ring state boundary[18]
+大而增大，由此判断直升机发生功率沉陷。进一步
+                                                                                            3.3 经验化涡环状态边界
+将 Peters 判据修改为：当相对来流速度矢量在旋翼
+                                                                                                    NASA AMES 中心的 Johnson[19] 将直升机浮沉
+尾流速度矢量反方向上的投影超过−0.28vh 时，直升
+                                                                                            方向速度不稳定性区间作为进入和退出涡环状态的
+机进入涡环状态。式（9）为高–辛涡环状态边界的表
+                                                                                            界定准则（图 19），认为 CEV 的 D6075 飞行试验结果[18]
+达式，与式（4）联立可得出高–辛边界曲线，如图 17
+                                                                                            和美国海军联合波音公司开展的 V–22 飞行试验结
+所示。
+                                                                                            果 [3] 反映了这一现象，根据上述飞行试验结果划定
+      2
+  V + V + v1 V Y    2√
+  √   X            Y
+                    + VX2 + (VY2 + v1 )2 = 0.28vh                                           了下降飞行稳定性边界。
+    2      2      2
+   VX + (VY + v1 )
+                                                                                                    而后，Johnson 进一步将此边界作为 d(VY +v1)/
+                                                （9）
+                                                                                            dVY = 0 的分界点，建立了涡环状态下适用的旋翼入
+                  0
+                                                                                            流模型，图 9 中的 N 点与 X 点即为由该模型表征的
+                –0.5
+                                                                                            进入和退出涡环状态的边界，其函数为：
+                –1.0                                                                            VY N = −0.975 + 0.525[1 − (VX /0.95)2 ]0.2                           （11）
+        VY/vh
+
+
+
+
+                –1.5
+                                                                                                VY X = −0.975 − 0.525[1 − (VX /0.95)2 ]1.5                           （12）
+                –2.0                                                                        式中：VYN、VYX 分别为进入与退出涡环状态的下降
+                                                          高-辛边界
+                –2.5                                                                        飞行速度。
+                       0    0.2    0.4   0.6   0.8        1.0       1.2     1.4
+                                           VX/vh                                                    在 2.1 节中，依据下降速度增大时旋翼拉力阻尼
+                            图 17 高−辛涡环状态边界                [14]                              与旋翼性能恢复的先后关系，讨论了直升机恢复飞
+                 Fig. 17    Gao−Xin vortex ring state boundary[14]
+                                                                                            行平衡的时机。因此，虽然 Johnson 的本意是由图 9
+      高正和辛宏是将试验结果引入涡环状态边界半                                                                  中的 X 点判定退出涡环状态，但就 CEV 对飞行试验
+经验模型构建过程的开创者，但仅使用了垂直下降                                                                      数据的处理方式而言，其结果实质是在旋翼总距维
+时进入涡环状态的试验数据，且试验中未包含退出                                                                      持进入涡环状态前的水平时，旋翼拉力恢复至悬停
+涡环状态阶段的模拟。                                                                                  状态下的拉力大小的情况。
+3.2.2           ONERA 边界                                                                    3.4 涡环状态边界模型的差异与适用性分析
+                                                   [18]
+      法 国 宇 航 院 的 Taghizad 等                              认为桨尖涡运动                                   1）边界曲线形态不同。随着前飞速度增大，高−
+ 第 5期                                                王畅等： 直升机涡环状态边界风洞试验研究                                                      87
+
+              0                                                                  程中，由于近似模型在 VX/vh = 0 附近斜率不同，导
+            –0.2
+                                                                                 致边界曲线与纵坐标的交点不同。
+            –0.4
+                                                                                       3） 高 −辛 边 界 相 对 于 ONERA 边 界 和 NASA 边
+            –0.6
+                                                                                 界 较 为 保 守 ， 陆 洋 等 [34] 使 用 R22 直 升 机 对 高 −辛 边
+            –0.8
+                                                                                 界进行试飞验证后指出：高−辛边界更适宜作为涡环
+    VY/vh
+
+
+
+
+            –1.0
+                                                                                 状态之前的告警边界。ONERA 边界和 NASA 边界
+            –1.2
+                                                                                 均参考飞行试验数据结果建立，描述了直升机浮沉
+            –1.4
+                                                                                 运动失稳与飞行平衡重新恢复的现象，但受试验数
+            –1.6
+                                                                                 据离散度和近似表达式的影响，其构建中仍引入了
+            –1.8
+                   0      0.2      0.4       0.6     0.8       1.0               一定的主观因素。
+                                      VX/vh
+                                      V–22 roll-off                              3.5 改进方向
+                                      D6075 VY drop
+                                      D6075 VY stabilization                           从涡环状态边界模型的差异对比中可知，模型
+                                      Stability boundary
+                                                                                 的真实性取决于近似表达式和试验数据的质量。因
+                        图 19    NASA 涡环状态边界[19]                                  此，一方面，需要能更真实地反映物理机制的近似表
+              Fig. 19    NASA vortex ring state boundary[19]
+                                                                                 达式；另一方面，需要更稳定的试验数据，避免数据
+辛边界中进入涡环状态的临界下降速度显著增大，                                                           离散性对模型置信度的影响。此外，多位研究者认
+NASA 边 界 与 之 类 似 但 斜 率 大 幅 减 小 ， 而 ONERA                                         为，旋翼轴流状态试验须在大型风洞中使用小尺寸
+边界呈现出略微降低的趋势，这些差异导致了对前                                                           旋翼开展 [19, 47]。
+飞速度增大时是否能放宽下降飞行速度限制看法的
+                                                                                 4     风洞试验和涡环状态边界构建
+偏差。
+   高 −辛 边 界 与 ONERA 边 界 同 为 以 桨 尖 涡 运 动                                          4.1 下降状态旋翼气动特性风洞试验
+速度刻画对涡环状态逼近程度的半经验模型，二者                                                           4.1.1     试验方法
+对桨尖涡速度表征方式的不同导致了临界下降速度                                                                 旋翼拉力及其阻尼特性是评估涡环状态边界的
+随前飞速度变化规律的差异。NASA 边界是基于数                                                         重要指标，通过设计总距恒定、下滑角不同的多种工
+理统计模型对 2 组飞行试验结果规律进行抽象得到                                                         况，评估拉力性能、拉力阻尼、桨盘入流（需用功率）
+的 ， 其 上 边 界 形 态 依 据 V –22 与 D6075 飞 行 试 验 结                                      随来流条件的变化。根据旋翼性能试验结果计算桨
+果规律划定，但忽略了 VX/vh < 0.6 时 D6075 直升机                                               盘入流的方法参见文献 [18-19]。
+进入涡环状态临界速度的规律。                                                                   4.1.2     试验模型
+   2）垂直下降状态的临界速度不同。高−辛边界基                                                              旋翼气动外形可能对涡环状态特性造成不同影
+于悬臂机试验获得的固定总距下旋翼功率变化趋势                                                           响，为了扩大试验结果的适用范围，选取 4 副不同桨
+转 折 点 ， 将 垂 直 下 降 状 态 临 界 速 度 认 定 为 ‒ 0.28vh，                                    尖形状、扭转角、翼型配置的旋翼模型作为测试对
+随后由构建的判别式给出退出涡环状态的临界速度                                                           象，其参数如表 2 所示。
+（ 约 −1.8vh） 。 ONERA 边 界 与 NASA 边 界 的 垂 直 下                                       4.1.3     试验设备
+降临界速度都参考了 CEV 的 D6075 的试飞结果，前                                                          试验在大型低速风洞开口试验段开展，风洞喷
+者为−0.63 vh、−1.47 vh，后者为−0.45 vh、−1.5vh。二者                                        口尺寸为 8 m × 6 m，最高阻塞比约 0.036，低于表 1
+差异产生于对垂直下降附近离散飞行结果的逼近过                                                           中除全尺寸风洞外的大部分风洞试验的阻塞比。旋
+                                                                     表 2 旋翼模型参数
+                                                         Table 2      Parameters of rotor models
+
+   编号                   半径/mm               弦长/mm               扭转角/(°)                  桨尖形状      翼型厚度         转速/(r﹒min−1)
+
+    1                     550                  135                      0                抛物线后掠       12%           3 000
+    2                     550                  135                     −8                抛物线后掠      11.3%          3 000
+
+    3                     550                  135                     −8                抛物线后掠       12%           2 600
+
+    4                     450                   97                    −6.7                 矩形        14%           3 700
+  88                                                    实    验   流   体   力         学                                          http://www.syltlx.com
+
+
+翼 拉 力 由 五 分 量 天 平 测 量 ， 旋 翼 扭 矩 由 LORNZE                                                    1.6
+
+DR2400 扭矩传感器测量，转速和方位角由安装在电                                                                  1.4
+
+机轴的编码器测量，试验场景如图 20 所示。                                                                      1.2
+
+
+
+
+                                                                               Ct /Ct0
+                                                                                            1.0
+                                                                                                                                      1 号旋翼
+                                                                                            0.8                                       2 号旋翼
+                                                                                                                                      3 号旋翼
+                                                                                                                                      4 号旋翼
+                                                                                            0.6
+                                                                                                  0          –0.4   –0.8     –1.2   –1.6   –2.0
+                                                                                                                        VY/vh
+                                                                                                                    （a）旋翼拉力
+
+
+                                                                                                                                      1 号旋翼
+                                                                                            1.6
+                                                                                                                                      3 号旋翼
+                                                                                                                                      4 号旋翼
+                         图 20 风洞试验照片                                                        1.2
+
+
+
+
+                                                                               (VY+v1)/vh
+                   Fig. 20 Wind tunnel test photo
+                                                                                            0.8
+4.1.4     试验状态
+                                                                                            0.4
+       如图 21 所示，试验风速范围：悬停，来流速度 V∞ =
+4.5 ～ 20 m/s；下滑角 α = 90° ～ 40°。测量参数包                                                         0
+                                                                                                  0          –0.4   –0.8     –1.2   –1.6   –2.0
+括旋翼拉力和扭矩（2 号旋翼仅测量了拉力，未测量                                                                                                VY/vh
+                                                                                                                    （b）桨盘入流
+扭矩）。
+                                                                                            1.1
+                                     旋翼拉力
+
+                                                                                            1.0
+                                     α
+                                                                               Cp/Cp0
+
+
+
+
+                                           –VX
+
+                                                                                            0.9
+                             –VY
+                                                                                                                                      1 号旋翼
+                                              V∞                                                                                      3 号旋翼
+                                                                                                                                      4 号旋翼
+                                                                                            0.8
+                    图 21 试验风速与下滑角示意图                                                              0          –0.4   –0.8     –1.2   –1.6   –2.0
+Fig. 21   Schematic diagram of glide angle between test wind speed                                                      VY/vh
+          and rotor                                                                                                 （c）旋翼功率
+
+                                                                                                      图 22    旋翼在垂直下降状态的气动特性
+4.2 试验结果及分析
+                                                                     Fig. 22            Aerodynamic characteristics of each rotor in vertical descent
+       图 22 为 4 副旋翼垂直下降状态（α = 90°）的拉
+力系数 Ct、桨盘入流（VY + v1）、功率系数 Cp 与悬停                                     态的 160%，而大多数直升机的功率裕度很难满足在
+状态下功率系数（用下标 0 表示）的比值，试验结果                                            该状态下拉起直升机的要求。
+随 风 速 的 变 化 规 律 与 前 人 结 果 （ 图 7[39]、 图 9[19]） 一                              图 23 为 1 号旋翼在不同下滑角条件下的拉力与
+致。图 22 中旋翼拉力和桨盘入流随风速变化的转折                                            桨盘入流情况。随着下滑角减小，即前进比增大，旋
+点基本一致，反映了二者背后相同的物理机制。图                                               翼进入涡环状态后拉力下降幅度和桨盘入流增大幅
+22（c）中功率比值整体变化趋势与图 22（a）中拉力变                                         度降低，同时拉力恢复至悬停值对应的横坐标略微
+化趋势基本一致，反映了桨叶剖面迎角变化对翼型                                               靠左，这说明功率沉陷严重程度和退出涡环状态对
+阻 力 和 升 力 的 影 响 。 但 功 率 比 值 在 VY/vh =−0.4 ～                          应的下降速度随前飞速度增大而减小。观察曲线的
+−0.8 时出现了与图 7（b）中类似的不光滑特征，且变                                         左侧区域可见：随着下滑角减小，拉力负阻尼效应出
+化幅度显著弱于拉力和桨盘入流。                                                      现时所对应的横坐标略微向左移动，这意味着进入涡
+       对比图 22 中各副旋翼的拉力和需用功率特性可                                       环状态所对应的下降速度随前飞速度增大而略微减小。
+以发现：3 号旋翼在涡环状态下的性能损失最小；                                                      图 24 为 2 号 旋 翼 在 40°下 滑 角 下 的 拉 力 特 性 。
+4 号旋翼的拉力损失最大，VY =−1.2 vh 时的拉力仅                                       由图可知：下滑角为 40°时，各下降速度下的旋翼拉
+为悬停状态的 70% 左右，其需用功率却达到悬停状                                            力均高于悬停状态，桨盘入流均低于悬停状态，表明
+  第 5期                                                          王畅等： 直升机涡环状态边界风洞试验研究                                                                            89
+
+
+这个阶段不会发生功率沉陷现象，CEV 以图 4 的方                                                      突变作为涡环状态临界速度的判断依据。对各副旋
+式进行飞行试验时未经历下降速度突增也证明了这                                                          翼重复以上操作，得到本次试验提取的涡环状态边
+一点；VY/vh = −0.4 ～ −0.6 时拉力趋平，反映了拉                                               界临界速度，如图 25 所示，各副旋翼的偏差值约为 0.1。
+力负阻尼和中立稳定现象依然存在。                                                                                    0
+                                                                                                                                1 号旋翼           2 号旋翼
+                       1.8                                                                        –0.2                          3 号旋翼           4 号旋翼
+                                 α = 90°                                                          –0.4
+                       1.6       α = 80°
+                                 α = 70°                                                          –0.6
+                                 α = 60°
+
+
+
+
+                                                                                          VY/vh
+                       1.4       α = 50°                                                          –0.8                                           α = 40°
+                                 α = 40°
+          Ct/Ct0
+
+
+
+
+                       1.2                                                                        –1.0                                          α = 50°
+                                                                                                                                          α = 60°
+                                                                                                  –1.2
+                       1.0
+                                                                                                  –1.4             α = 80° α = 70°
+                       0.8                                                                        –1.6
+                                                                                                         0   0.2      0.4           0.6        0.8        1.0
+                       0.6                                                                                                  VX/vh
+                             0   –0.2 –0.4 –0.6 –0.8 –1.0 –1.2 –1.4 –1.6
+                                                VY/vh                                             图 25 从风洞试验数据提取的涡环状态边界
+                                           （a）旋翼拉力                              Fig. 25       Vortex ring state boundary extracted from wind tunnel test
+                                                                                              data
+                       1.8
+                                 α = 90°
+                       1.6       α = 80°                                        4.3 涡环状态边界半经验公式构建
+                       1.4       α = 70°
+                                 α = 60°                                              在 试 验 数 据 中 ， 可 以 观 察 到 与 Wolkovitch 边
+                       1.2       α = 50°
+          (VY+v1)/vh
+
+
+
+
+                                 α = 40°
+                       1.0                                                      界、Newman 等、ONERA 边界相似的临界下降速度
+                       0.8
+                       0.6
+                                                                                随前飞速度增大而减小的特征，这些边界均使用旋
+                       0.4                                                      翼诱导速度和自由来流速度叠加描述桨尖涡的运动
+                       0.2
+                                                                                速度。Newman 等和 ONERA 边界使用桨尖涡运动
+                         0
+                             0   –0.2 –0.4 –0.6 –0.8 –1.0 –1.2 –1.4 –1.6
+                                                VY/vh
+                                                                                速度绝对值低于阈值（即桨尖涡向上或向下运动速
+                                           （b）桨盘入流                              度的极值）的方式表征进入或退出涡环状态的边界，
+                    图 23 1 号旋翼在不同下滑角下的气动特性                                      避免了 Wolkovitch 等和 Peters 边界采用 2 种公式分
+Fig. 23         Aerodynamic characteristics of No. 1 rotor at different glide
+                angles
+                                                                                别表征上、下边界带来的不便。此外，通过改变临界
+                                                                                值可实现边界范围成比例放大或缩小，可在机载设
+                       1.8
+                                                                                备中实时评估危险程度的高低。因此，本文拟借鉴
+
+                       1.6
+                                                                                Newman 等和 ONERA 边界的思想构造涡环状态边
+                                                                                界半经验表达式。
+          Ct/Ct0
+
+
+
+
+                       1.4                                                            桨尖涡聚集形成涡环并逼近旋翼是涡环状态的
+                                                                                核心流动机制，但其涉及的环节十分复杂，难以采用
+                       1.2
+                                                                  α = 40°       事先确定的参数描述。涉及的环节有：1）桨尖涡垂向
+                       1.0
+                             0      0.2     0.4           0.6   0.8     1.0     速度不可能严格等于（VY+v1）/2；2）桨尖涡聚集形成
+                                                  VY/vh
+                                                                                的涡环不可能总位于桨盘，使用桨盘处的诱导速度
+            图 24 2 号旋翼在 40°下滑角下的拉力特性                                            来计算其运动速度与实际流场不符；3）进入与退出
+     Fig. 24 Thrust characteristics of rotor 2 at 40 ° glide angle
+                                                                                涡环状态对应的桨尖涡运动正、负速度临界值不可
+      针对图 23（a）中下滑角为 90° ～ 50°时，在首个                                             能完全对称；4）前飞速度不仅参与桨尖涡运动的驱
+下降速度试验点至拉力极小值对应的区间内，对拉                                                          动，还控制边界的最大前进比，其加权可能存在非线
+力数据进行多项式拟合并求导，以导数为 0 时对应                                                        性规律；5）涡环状态边界对应的临界值可能随前飞
+的下降速度作为进入涡环状态的临界速度；在拉力                                                          速度变化而变化。上述各环节所对应的表征参数无
+达到极小值之后的区间内，进行多项式拟合并求出                                                          法直接由其内部机理确定，须将其作为灰箱系统处
+Ct/Ct0 = 1 所对应的下降速度，将其作为退出涡环                                                    理，借助试验结果拟合寻找合适的值。
+状态的临界速度。针对 40°下滑角状态，对拉力趋平                                                             将涡环状态边界理论近似表达式设计成式（13）
+前后区间的数据进行多项式拟合并求导，以导数值                                                          为下式：
+  90                                                       实   验      流   体     力    学                            http://www.syltlx.com
+
+  √
+                n                                     n 2                 低速稳定下降飞行时的桨盘倾角普遍较小，但在拉
+   k1 (VX / vh ) 1 +[k2 v1 /vh + VY /vh +k3 (VX / vh ) 2 ]
+                                                                          平减速等大俯仰角姿态机动时，必须考虑桨盘倾角
+    ⩽ k4 VX / vh + ε0
+                                                               （13）       的修正，如 1.1 节分析的 Mi−8T 直升机事故，就是在
+式中： k1 （VX / vh ）n1表征前飞速度对桨尖涡的驱动力，                                        拉平减速中沿旋翼轴向进入桨盘的气流剧增，导致
+k1 与 n1 起 着 控 制 不 等 式 左 边 项 在 大 前 进 比 下 饱 和                               直升机进入涡环状态 [8]。此外，在实际应用中还需考
+的 作 用 ； k2 v1 /vh表 征 诱 导 速 度 对 桨 尖 涡 的 驱 动 力 ，                            虑环境风的影响，如 2020 年法国陆军 AS332 直升机
+k2 用于调节诱导速度与自由来流速度轴向分量对桨                                                  就在着陆时因遭遇顺风而进入涡环状态导致失事 [7]。
+尖涡驱动作用的强弱； VY /vh表征下降速度对桨尖涡
+                                                                          5         结     论
+的驱动力； k3 （VX / vh ）n2 表征在不同前进比下对用动
+量定理计算的桨盘入流结果的修正；( k4 VX / vh + ε0 )                                                 1）从预防事故的角度出发，应以浮沉运动不稳
+
+表征不同前飞速度下桨尖涡运动速度的临界值。                                                     定作为进入涡环状态的判断依据，映射至旋翼气动
+
+          采 用 最 小 二 乘 算 法 ， 以 图 25 中 的 数 据 为 样 本 ，                        机理，其评估指征是桨盘轴向入流随下降速度逆向
+
+对式（13）中的未知参数进行求解，得到涡环状态边                                                  增大导致的旋翼拉力负阻尼效应。
+
+界的半经验公式：                                                                            2）从预判安全离地高度的角度出发，应以直升
+ √                                                                        机平衡性、稳定性和操纵性的恢复作为判断直升机
+               12                                  2
+  1.2(VX / vh ) +(v1 /1.66vh +VY /vh +0.25VX / vh )                       退出涡环状态的依据。鉴于旋翼拉力阻尼效应开始
+   ⩽ 0.1VX / vh + 0.23                                                    恢复时仍存在较大升力损失，本文认为应以旋翼拉
+                                                               （14）
+                                                                          力性能的恢复作为退出涡环状态的指征。
+          图 26 为 基 于 式 （ 14） 得 到 的 涡 环 状 态 边 界 与 本
+                                                                                    3）直升机进入涡环状态实质是桨尖涡在旋翼周
+文风洞试验及 CEV 飞行试验结果对比。式（14）得到
+                                                                          围聚集，导致诱导速度对桨盘轴向入流影响占优的
+的进入涡环状态的临界下降速度随前飞速度略有减
+                                                                          结果。桨尖涡运动速度对涡环状态边界表征具有物
+小 ，与 CEV 飞行试验结果趋势一致。这主要是由于
+                                                                          理意义明确的指示作用。
+旋翼诱导速度随着前飞速度增大而降低，加剧了下降
+                                                                                    4） 高−辛边界和 ONERA 边界同为使用桨尖涡
+飞行中桨尖涡趋向上游的运动。这表明在实践中，
+                                                                          运动速度刻画涡环状态逼近程度的半经验模型，二
+即使有前飞速度，仍不可放宽对下降速度的限制。
+                                                                          者差异源于对桨尖涡运动速度的描述和对试验数据
+           0                                                              涡环状态的界定方式不同。NASA 边界是基于飞行
+         –0.2
+                                                                          试验数据统计抽象而来的经验模型，其进入涡环状
+         –0.4
+                                                                          态 的 临 界 下 降 速 度 介 于 高 −辛 边 界 与 ONERA 边 界
+         –0.6
+         –0.8
+                                                                          之间。
+ VY/vh
+
+
+
+
+         –1.0                                                                       5）风洞试验结果显示：进入涡环状态后，旋翼拉
+         –1.2                                                             力损失最高可达 30%，需用功率则约为悬停功率的
+         –1.4                           涡环状态边界（式（14））                     160%，单纯依靠提升总距改出涡环状态要付出非常
+                                        CEV D6075 飞行试验
+         –1.6
+                                        本文风洞试验结果                          高的功率代价；进入涡环状态的临界下降速度随前
+         –1.8
+                0   0.2       0.4           0.6      0.8        1.0       飞速度增大而略微降低，表明即使有前飞速度时仍
+                                    VX/vh
+                                                                          不可放宽对下降速度的限制。
+图 26 式（14）计算的涡环状态边界与风洞试验和 CEV 飞行试验结果对比
+                                                                                    6） 在 涡 环 状 态 边 界 半 经 验 近 似 表 达 式 构 建 中 ，
+Fig. 26 Comparison of vortex ring state boundary calculated by
+        equation 14 with wind tunnel test results and CEV flight test     存在多个难以使用内部机理定量描述的环节。本文
+        results
+                                                                          采用灰箱系统建立了与试验数据较为一致的涡环状
+          需要指出的是，本文和表 1 中的旋翼涡环状态                                          态边界模型。
+性能试验均在桨盘倾角为 0°的情况下开展。Taghizad
+                                                                          参考文献：
+将 CEV 试验中的旋翼姿态角还原后，认为其飞行试
+                                                                          [1]       陆洋, 高正. 直升机涡环状态边界与飞行安全[J]. 航空科学技术,
+验结果的桨盘倾角小至可忽略 [18]，因而目前所发展
+                                                                                    2008, 15(5): 14–17.
+的涡环状态边界均未考虑桨盘倾角的影响。直升机                                                              LU Y, GAO Z. Helicopter Vortex-Ring state boundary and
+  第 5期                                         王畅等： 直升机涡环状态边界风洞试验研究                                                                        91
+
+
+       flight safety[J]. Aeronautical Science and Technology, 2008,           boundary based on model tests[J]. Transactions of Nanjing
+       15(5): 14–17.                                                          University of Aeronautics and Astronautics, 1994, 11(2):
+       doi：10.3969/j.issn.1007-5453.2008.05.004                               159–164.
+[2]    赵秀云. 直升机垂直下降的涡环边界分析[C]//98珠海航空学术会                               [17]   JIMENEZ J, DESOPPER A, TAGHIZAD A, et al. Induced
+       议第14届全国直升机年会论文集. 1998.                                                 velocity model in steep descent and vortex-ring state
+[3]    KISOR R, BLYTH R, BRAND A, et al. V-22 low                             prediction[C]//8th European Rotorcraft Forum Proceedings.
+       speed/high rate of descent test summary[C]//American                   2002.
+       Helicopter Society Annual. 2004.                                [18]   TAGHIZAD A, JIMENEZ J, BINET L, et al. Experimental
+[4]    NORIHIRO G, SHINSUKE E, TOSHIYUKI I, et al.                            and theoretical investigations to develop a model of rotor
+       Aircraft accident investigation report[R]. Japan Transport             aerodynamics adapted to steep descents[C]//Proc of
+       Safety Board, 2013.                                                    Presented at the American Helicopter Society 58th Annual
+[5]    HELLNER C, KJELLBERG U, HELLSTRÖM C R.                                 Forum. 2002.
+       Accident involving helicopter type 11 no 334 (Agusta Bell       [19] JOHNSON W. Model for vortex ring state influence on
+       412HP) over Bottensjön, Karlsborg, O county, Sweden, on                rotorcraft flight dynamics[C]// Proc of AHS 4th Decennial
+       25 March 2003 [R]. Report RM 2005: 01e, 2005.                          Specialists’ Conference on Aeromechanics. 2004.
+[6]    Report on the accident to AS332 L2 Super Puma helicopter,       [20] JOHNSON W. Rotorcraft aeromechanics[M]. Cambridge:
+       G-WNSB on approach to Sumburgh Airport on 23 August                    Cambridge University Press, 2013.
+       2013[R/OL]. Aircraft Accident Report No: 1/2016. (2016-03-      [21] 孙文胜, 胡凯亮, 张泰峰, 等. 直升机舰载飞行涡环边界的确定[J].
+       15)[2022-06-27]. https://assets.publishing.service.gov.uk/me           科技创新导报, 2010, 7(7): 107.
+       dia/56f169aa40f0b6038500001e/Eurocopter_AS332_L2_Super                 doi：10.3969/j.issn.1674-098X.2010.07.090
+       _Puma_G-WNSB_04-16.pdf                                          [22]   胡奉言, 陈铭, 邹思汉, 等. 直升机尾桨涡环状态边界研究[C]//湖
+[7]    Aerossurance. French cougar crashed after entering VRS                 南省力学学会2015学术年会论文集. 2015.
+       when coming into hover[EB/OL]. (2021-10-3)[2022-10-28].         [23]   马鸿儒, 穆志韬, 李洪伟, 等. 基于桨盘倾角的直升机涡环状态边
+       https://aerossurance.com/helicopters/alat-cougar-fatal-                界修正计算方法[J]. 空气动力学学报, 2018, 36(1): 31–34.
+       hover-vrs.                                                             MA H R, MU Z T, LI H W, et al. Revised calculation
+[8]    КОМИТЕТ М А. Окончательный отчет вертолет Ми-8Т[R]. RA-                method for helicopter vortex-ring state boundary based on
+       24255, 2014.                                                           flight attitude[J]. Acta Aerodynamica Sinica, 2018, 36(1):
+[9]    КОМИТЕТ М А. По результатам расследования авиационного                 31–34.
+       происшествия[R]. RA-06029, 2018.                                       doi：10.7638/kqdlxxb-2015.0203
+[10]   王畅, 程蒙, 马帅. 直升机尾桨失效事故案例分析[J]. 重庆交通大                             [24]   VARNES D J. Development of a helicopter vortex ring
+       学学报 (自然科学版), 2022, 41(4): 126–132.                                     statewarning system through a moving map display
+       WANG C, CHENG M, MA S. Case study on accident                          computer[D]. Monterey: Naval Postgraduate School, 1999.
+       caused by loss of tail-rotor effectiveness[J]. Journal of       [25]   KISOR R L. Control system for rotorcraft for preventing the
+       Chongqing Jiaotong University(Nature Science), 2022, 41(4):            vortex ring state: US6880782[P]. 2005-04-19.
+       126–132.                                                        [26]   ABILDGAARD M, BINET L. Active sidesticks used for
+       doi：10.3969/j.issn.1674-0696.2022.04.19                                VRS avoidance[C]// Proc of European Rotorcraft Forum
+[11]   费景荣. 某型直升机异常离地状态的尾桨涡环特性分析[J]. 空军                                       (ERF). 2009.
+       工程大学学报, 2022, 23(1): 79–82.                                     [27]   BINET L, ABILDGAARD M, TAGHIZAD A, et al. VRS
+       FEI J R. An analysis of characteristics of tail rotor vortex           avoidance as active function on side-sticks[C]// Proc of
+       ring in an abnormal lift off state for a certain type of               American Helicopter Society 65th annual forum. 2009.
+       helicopter[J]. Journal of Air Force Engineering Univer-         [28]   DANG-VU B. Vortex ring state protection flight control
+       sity, 2022, 23(1): 79–82.                                              law[C]// Proc of 39th European Rotorcraft Forum. 2013.
+       doi：10.3969/j.issn.1009-3516.2022.01.011                        [29]   KISOR R L. Method and apparatus for preventing adverse
+[12]   AIRBUS. The H160 opened a new chapter in the history of                effects of vortex ring state: EP1620311 [P]. 2013-12-18.
+       Airbus helicopters. Joining its rotorcraft product range in a   [30]   陈坚强. 基于神经网络的直升机涡环告警方法研究[D]. 南京: 南京
+       size that is positioned between the company’ s H145 and                航空航天大学, 2018.
+       H175, this innovative medium helicopter became the first               CHEN J Q. Research on helicopter vortex ring warning
+       member of the H generation[EB/OL]. [2022-10-28]. https://              method based on neural network[D]. Nanjing: University of
+       www.airbus.com/en/products-services/helicopters/civil-                 Aeronautics and Astronautics, 2018.
+       helicopters/h160.                                               [31]   李高华. 直升机旋翼涡环状态流场高分辨率数值模拟方法研
+[13]   BASSET P M, CHEN C, PRASAD J V R, et al. Prediction                    究[D]. 上海: 上海交通大学, 2018.
+       of vortex ring state boundary of a helicopter in descending            LI G H. Study of high resolution numerical method for
+       flight by simulation[J]. Journal of the American Helicopter            helicopter rotor in vortex ring state[D]. Shanghai: Shanghai
+       Society, 2008, 53(2): 139–151.                                         Jiao Tong University, 2018.
+       doi：10.4050/JAHS.53.139                                         [32] STRYCZNIEWICZ W, SURMACZ K. Badania ekspery-
+[14]   辛宏, 高正. 直升机涡环区域边界包线的确定[J]. 气动实验与测量                                     mentalne stanu pierścienia wirowego na wirniku nośnym
+       控制, 1996, 10(1): 14–19.                                                śmigłowca metodą anemometrii obrazowej (PIV)[J]. Trans-
+[15]   XIN H, GAO Z. An experimental investigation of model                   actions of the Institute of Aviation, 2014, 235(2): 17–27.
+       rotors operating in vertical descent[C]//Proc of 19th                  doi：10.5604/05096669.1130234
+       European Rotorcraft Forum. 1993.                                [33] Surmacz K, Ruchała P, Stryczniewicz W. Wind tunnel tests
+[16]   XIN H, GAO Z. A prediction of the vortex-ring state                    of the development and demise of Vortex Ring State of the
+  92                                                       实    验    流   体   力    学                                   http://www.syltlx.com
+
+
+       rotor[C]//Advances in Mechanics: Theoretical, Computa-                    computational methodology using URANS solver[C]// Proc
+       tional and Interdisciplinary Issues, Proceedings of the 3rd               of 9th EASN International Conference on “ Innovation in
+       Polish Congress of Mechanics (PCM) and 21st International                 Aviation & Space”. 2019.
+       Conference on Computer Methods in Mechanics (CMM).                        doi: 10.1051/matecconf/201930402011.
+       2015: 8-11.                                                       [51] PADFIELD G D. Helicopter flight dynamics: including a
+[34]   陆洋, 高正, 黄文明, 等. 直升机涡环状态边界的飞行试验研究[J].                                      treatment of tiltrotor aircraft[J]. The Aeronautical Journal,
+       南京航空航天大学学报, 2001, 33(5): 405–409.                                         2018, 123(1266): 1333–1334.
+       LU Y, GAO Z, HUANG W M, et al. Flight test                                doi：10.1017/aer.2019.103
+       investigation of helicopter Vortex-Ring state boundary[J].        [52] 黄明其, 王亮权, 何龙, 等. 旋翼涡环状态气动特性和参数变化的
+       Journal of Nanjing University of Aeronautics & Astro-                     风洞试验[J]. 航空动力学报, 2019, 34(11): 2305–2315.
+       nautics, 2001, 33(5): 405–409.
+                                                                                 HUANG M Q, WANG L Q, HE L, et al. Wind tunnel test of
+       doi：10.3969/j.issn.1005-2615.2001.05.001
+                                                                                 aerodynamic characteristics and parametric variation for
+[35]   BRAND A, DREIER M, KISOR R, et al. The nature of
+                                                                                 rotor in vortex ring state[J]. Journal of Aerospace Power,
+       vortex ring state[J]. Journal of the American Helicopter
+                                                                                 2019, 34(11): 2305–2315.
+       Society, 2011, 56(2): 22001.
+                                                                                 doi：10.13224/j.cnki.jasp.2019.11.001
+       doi：10.4050/JAHS.56.022001
+                                                                         [53] LEISHMAN J G, BHAGWAT M J, ANANTHAN S. Free-
+[36]   DE BOTHEZAT G. The general theory of blade screws
+       including propellers, fans, helicopter screws, helicoidal                 vortex wake predictions of the vortex ring state for single-
+
+       pumps, turbo-motors, and different kinds of helicoidal                    rotor and multi-rotor configurations[C]//AHS International,
+       blades[R]. NACA-TR-29, 2013.                                              58th Annual Forum Proceedings. 2002.
+[37]   HUNT H H. Aerodynamics for Naval Aviators: NAVWEPS                [54] BROWN R E, NEWMAN S J, PERRY F J. Blade twist
+       00-80T-80[M]. Ravenio Books, 2016.                                        effects on rotor behaviour in the vortex ring state[C]// Proc
+[38]   SHEVELL, R S. Fundamentals of Flight [M]. New Jersey:                     of 28th European Rotorcraft Forum. 2002.
+       Prentice Hall, Inc. , 1988.                                       [55] WOLKOVITCH J. Analytical prediction of vortex-ring
+[39]   ADMINISTRATION F A. Rotorcraft flying handbook[M].                        boundaries for helicopters in steep descents[J]. Journal of the
+       New York: Skyhorse Publishing Inc. , 2007.                                American Helicopter Society, 1972, 17(3): 13–19.
+[40]   Transport Canada. helicopter flight training manual. Second               doi：10.4050/JAHS.17.13
+       Edition) [M]. Transport Canada, 2006.                             [56] DREES J M. A theory of airflow through rotors and its
+[41]   Federal Aviation Administration. Helicopter Flying Hand-                  application to some helicopter problems[J]. Journal of the
+       book: FAA-H-8083-21B[M]. Independently published, 2022.                   Helicopter Association of Great Britain, 1949, 3(2): 79–104.
+[42]   REEDER J P, GUSTAFSON F B. On the flying qualities of
+                                                                         [57] DREES J M, LUCASSEN L R, HENDAL W P. Airflow
+       helicopters[R]. NACA-TN-1799, 1949.
+                                                                                 through helicopter rotors in vertical flight[M]. Netherlands:
+[43]   STEWART W. Helicopter behaviour in the vortex-ring
+                                                                                 Nationaal Lucht-en Ruimtevaartlaboratorium, 1949.
+       conditions[R]. R. &M. No. 3117, 1959.
+                                                                         [58] DREES J M. The field of flow through a helicopter rotor
+[44]   AZUMA A, OBATA A. Induced flow variation of the
+                                                                                 obtained   from   wind     tunnel    smoke    tests[J].   Aircraft
+       helicopter rotor operating in the vortex ring state[J]. Journal
+                                                                                 Engineering, 1951, 23(266): 107–111.
+       of Aircraft, 1968, 5(4): 381–386.
+       doi：10.2514/3.43954                                               [59] PETERS D A, CHEN S Y. Momentum theory, dynamic
+[45]   CASTLES W Jr, GRAY R B. Empirical relation between                        inflow, and the vortex-ring state[J]. Journal of the American
+       induced velocity, thrust, and rate of descent of a helicopter             Helicopter Society, 1982, 27(3): 18–24.
+       rotor as determined by wind-tunnel tests on four model                    doi：10.4050/JAHS.27.18
+       rotors[R]. NACA-TN-2474, 1951.                                    [60] GESSOW         A,    MYERS       G     C.   Aerodynamics     of   the
+[46]   MORT K W, YAGGY P F. Wind-tunnel tests of two vtol                        Helicopter[M]. New York: Frederick Ungar, 1967.
+       propellers in descent[R]. NASA-TN-D-1766, 1963.                   [61] NEWMAN S, RICHARD B, JOHN P, et al. Predicting the
+[47]   WASHIZU K, AZUMA A, KOO J, et al. Experiments on a                        onset of wake breakdown for rotors in descending flight[J].
+       model helicopter rotor operating in the vortex ringstate[J].              Journal of the American Helicopter Societydoi, 2003, 48(1):
+       Journal of Aircraftdoi, 1966, 3(3): 225–230.                              28-38. doi: 10.4050/JAHS.48.28.
+       doi：10.2514/3.43729
+[48]   EMPEY R W, ORMISTON R A, USAAMRDL, et al. Tail
+                                                                         作者简介：
+       rotor thrust on a 5.5 Ft. helicopter model in ground                                  王     畅（1985—），男，河北邢台人，博士研究
+       effect[C]// Proc of Presented at the 30th Annual National
+                                                                                             生。研究方向：直升机空气动力学。通信地址：
+       Forum. 1974.
+                                                                                             北京市海淀区清华大学蒙民伟科技大楼北楼航
+[49]   BETZINA M D. Tiltrotor descent aerodynamics: a small-
+                                                                                             天航空学院 N103（100008）。
+       scale experimental investigation of vortex ring state[C]//
+       Proc of American Helicopter Society 57th Annual Forum.                                E-mail：chang-wa18@mails.tsinghua.edu.cn
+       2001.
+[50]   STALEWSKI W, SURMACZ K. Investigations of the
+       vortex ring state on a helicopter main rotor based on                                                                  （编辑：宋嘉慧）
+
