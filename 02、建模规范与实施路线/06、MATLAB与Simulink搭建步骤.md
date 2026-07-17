@@ -146,15 +146,189 @@ out.mu
 out.nu
 ```
 
-函数内部顺序：
+函数内部严格按以下计算链执行。
 
-1. 调用 `vrs_normal_baseline`。
-2. 根据 $\mu$ 移动 N、X 边界点。
-3. 判断当前 $\nu$ 位于 D-N、N-X、X-E 哪一段。
-4. 用 Hermite 型三次多项式求 $\Delta v_{\mathrm{VRS}}$。
-5. 计算水平速度门控后的 $f_{\mathrm{eff}}$。
-6. 计算 $v_{i,\mathrm{QS}}$。
-7. 输出状态和全部诊断量。
+#### 4.2.1 计算无量纲工况和基线
+
+先调用基线函数，得到 $v_h$、$\mu$、$\nu$ 和无量纲基线诱导速度
+$\bar v_{\mathrm{base}}$：
+
+$$
+\mu=\frac{|V_H|}{v_h},
+\qquad
+\nu=-\frac{V_d}{v_h}.
+$$
+
+基线总入流为：
+
+$$
+\bar q_{\mathrm{base}}
+=\nu+\kappa\bar v_{\mathrm{base}}.
+$$
+
+#### 4.2.2 计算水平速度归一化量 `gate_arg`
+
+代码：
+
+```matlab
+gate_arg = min(max(mu / max(muM, tol), 0), 1);
+```
+
+对应数学式：
+
+$$
+x_g
+=\min\left[
+\max\left(
+\frac{\mu}{\max(\mu_M,\varepsilon_{\mathrm{tol}})},0
+\right),1
+\right].
+$$
+
+其中 `max(muM, tol)` 防止门控阈值错误地取成零；外层 `max(...,0)` 和
+`min(...,1)` 把结果限制在 $[0,1]$。在正常参数下：
+
+$$
+x_g=
+\begin{cases}
+\dfrac{\mu}{\mu_M}, & 0\le\mu<\mu_M,\\
+1, & \mu\ge\mu_M.
+\end{cases}
+$$
+
+因此 $x_g$ 表示水平速度从零走到关断阈值的完成比例。
+
+#### 4.2.3 计算平滑门函数
+
+```matlab
+vrs_gate = 1 - gate_arg^2 * (3 - 2*gate_arg);
+```
+
+对应：
+
+$$
+g_{\mathrm{VRS}}
+=1-x_g^2(3-2x_g)
+=1-3x_g^2+2x_g^3.
+$$
+
+它满足：
+
+$$
+g_{\mathrm{VRS}}(0)=1,
+\qquad
+g_{\mathrm{VRS}}(1)=0,
+\qquad
+g'_{\mathrm{VRS}}(0)=g'_{\mathrm{VRS}}(1)=0.
+$$
+
+所以水平速度为零时保留全部 VRS 修正，达到 $mu_M$ 时完全关闭，且两端平滑。
+
+#### 4.2.4 收拢 N、X 控制点
+
+先计算：
+
+$$
+x_m=\max(0,1-x_g^2),
+$$
+
+再计算固定 N、X 点的中点和半间距：
+
+$$
+\nu_c=\frac{\nu_N+\nu_X}{2},
+\qquad
+\Delta\nu_c=\frac{\nu_N-\nu_X}{2}.
+$$
+
+移动后的点为：
+
+$$
+\nu_N^*=\nu_c+\Delta\nu_c x_m^{0.2},
+\qquad
+\nu_X^*=\nu_c-\Delta\nu_c x_m^{1.5}.
+$$
+
+当 $mu=0$ 时，$\nu_N^*=\nu_N$、$\nu_X^*=\nu_X$；当
+$\mu\to\mu_M$ 时，两点都向 $\nu_c$ 收拢。
+
+#### 4.2.5 判断是否位于 VRS 修正区
+
+只有同时满足：
+
+$$
+\nu_E\le\nu\le\nu_D,
+\qquad
+\mu<\mu_M,
+$$
+
+才令 `inside_vrs = true`。否则目标总入流直接采用基线：
+
+$$
+\bar q_{\mathrm{target}}=\bar q_{\mathrm{base}}.
+$$
+
+#### 4.2.6 计算 D-N、N-X、X-E 三段曲线
+
+当 `inside_vrs = true` 时，根据 $\nu$ 所在区间选择：
+
+$$
+\bar q_{\mathrm{target}}(\nu)=
+\begin{cases}
+H_{D,N}(\nu), & \nu_N^*\le\nu\le\nu_D,\\
+H_{N,X}(\nu), & \nu_X^*\le\nu<\nu_N^*,\\
+H_{X,E}(\nu), & \nu_E\le\nu<\nu_X^*.
+\end{cases}
+$$
+
+其中 $H$ 为按“端点值 + 端点斜率”构造的三次 Hermite 曲线。D、E 点与基线的函数值和斜率连接，N、X 点的目标斜率设为零。
+
+#### 4.2.7 从目标总入流反算 VRS 修正
+
+先从目标总入流扣除轴向来流：
+
+$$
+\bar v_{i,\mathrm{target}}
+=\bar q_{\mathrm{target}}-\nu.
+$$
+
+再计算门控后的无量纲 VRS 修正：
+
+$$
+\Delta\bar v_{\mathrm{VRS}}
+=f_{\mathrm{VRS}}g_{\mathrm{VRS}}
+\left(
+\frac{\bar v_{i,\mathrm{target}}}
+{\max(\kappa,\varepsilon_{\mathrm{tol}})}
+-\bar v_{\mathrm{base}}
+\right).
+$$
+
+恢复量纲并形成准定常目标：
+
+$$
+v_{\mathrm{base}}=v_h\bar v_{\mathrm{base}},
+\qquad
+\Delta v_{\mathrm{VRS}}=v_h\Delta\bar v_{\mathrm{VRS}},
+$$
+
+$$
+v_{i,\mathrm{QS}}
+=\kappa\left(v_{\mathrm{base}}+\Delta v_{\mathrm{VRS}}\right).
+$$
+
+#### 4.2.8 输出标志和诊断量
+
+最终 VRS 标志为：
+
+$$
+\mathrm{vrs\_flag}
+=\mathrm{inside\_vrs}
+\land
+\left(f_{\mathrm{VRS}}g_{\mathrm{VRS}}>\varepsilon_{\mathrm{tol}}\right).
+$$
+
+同时输出 $v_h$、$\mu$、$\nu$、$v_{\mathrm{base}}$、
+$\Delta v_{\mathrm{VRS}}$ 和输入有效性，便于逐步排错。
 
 不要一开始把三段多项式系数手工展开成一长串常数。应使用“端点值 + 端点斜率”的三次 Hermite 形式，方便自动检查连续性。
 
