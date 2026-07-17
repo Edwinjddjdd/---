@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>涡环模型 MATLAB 程序关系图</title>
+    <link rel="stylesheet" href="./模型说明.visualize.assets/visualize-theme.css" />
+  </head>
+  <body>
+    <main class="viz-shell">
+      <header class="viz-hero">
+        <p class="viz-kicker">MATLAB / Simulink 程序关系</p>
+        <h1 class="viz-title">涡环模型程序思维导图</h1>
+        <p class="viz-summary">
+          从参数出发，经过 Johnson 准定常算法和动态入流环节，最后进入静态验证、
+          Simulink 动态仿真与未来六自由度结果绘图。
+        </p>
+        <ul class="viz-meta">
+          <li class="viz-pill">来源：模型说明.md 与 9 个 MATLAB 文件</li>
+          <li class="viz-pill">目录：03、涡环模型实现</li>
+          <li class="viz-pill">生成日期：2026-07-17</li>
+        </ul>
+      </header>
+
+      <section class="viz-grid">
+        <article class="viz-panel">
+          <h2>程序之间的关系</h2>
+          <div class="mermaid">
+flowchart LR
+  subgraph L1["① 参数层"]
+    P["vrs_params.m<br/>旋翼、环境、Johnson 边界、tau"]
+  end
+
+  subgraph L2["② 核心算法层"]
+    W["vrs_johnson_qs.m<br/>易读的结构体接口"]
+    N["vrs_johnson_qs_numeric.m<br/>Johnson 数值核心"]
+    R["vrs_inflow_rhs.m<br/>一阶动态方程"]
+    W -->|"调用"| N
+  end
+
+  subgraph L3["③ 初始化与 Simulink 层"]
+    I["init_vrs_model.m<br/>准备 P_vrs、T_ref、vi0"]
+    M[("vrs_inflow_testbench.slx<br/>动态入流测试台")]
+    O["open_vrs_model.m<br/>初始化并打开模型"]
+    O -->|"先运行"| I
+    O -->|"再打开"| M
+    I -->|"工作区参数与初值"| M
+    M -->|"MATLAB Function 块调用"| N
+    R -. "同一动态公式由基础块实现" .-> M
+  end
+
+  subgraph L4["④ 学习、验证与绘图层"]
+    S["test_vrs_static.m<br/>静态曲线、边界与连续性"]
+    D["run_vrs_testbench.m<br/>进入与改出 VRS 动态仿真"]
+    F["plot_vrs_6dof_comparison.m<br/>六自由度结果综合图"]
+    X["未来六自由度模型输出<br/>t、V_d、T、v_i"]
+    X -. "接入后提供数据" .-> F
+  end
+
+  P -->|"参数结构体 P"| W
+  P -->|"数值向量 P.vector"| N
+  P -->|"初始化参数"| I
+  I -->|"计算悬停初值"| W
+  S -->|"读取参数"| P
+  S -->|"反复扫描"| W
+  D -->|"先初始化"| I
+  D -->|"运行模型"| M
+  M -->|"v_i、v_i_QS、vrs_flag、v_base"| D
+
+  classDef param fill:#d9f2ed,stroke:#0f766e,color:#1f2528;
+  classDef core fill:#fff7ed,stroke:#c2410c,color:#1f2528;
+  classDef model fill:#eff6ff,stroke:#2563eb,color:#1f2528;
+  classDef output fill:#f5f3ff,stroke:#7c3aed,color:#1f2528;
+  class P param;
+  class W,N,R core;
+  class I,M,O model;
+  class S,D,F,X output;
+          </div>
+        </article>
+
+        <article class="viz-panel half">
+          <h2>按学习顺序看</h2>
+          <div class="viz-timeline">
+            <div class="viz-step">
+              <p class="viz-step-title">1. vrs_params.m</p>
+              <p class="viz-step-meta">先认识所有物理参数、无量纲边界和时间常数。</p>
+            </div>
+            <div class="viz-step">
+              <p class="viz-step-title">2. vrs_johnson_qs_numeric.m</p>
+              <p class="viz-step-meta">理解基线诱导速度、VRS 分段曲线和水平速度门控。</p>
+            </div>
+            <div class="viz-step">
+              <p class="viz-step-title">3. vrs_johnson_qs.m</p>
+              <p class="viz-step-meta">从结构体输出观察每个中间结果，便于手算和扫掠。</p>
+            </div>
+            <div class="viz-step">
+              <p class="viz-step-title">4. vrs_inflow_rhs.m</p>
+              <p class="viz-step-meta">理解准定常目标如何通过一阶滞后变成实际诱导速度。</p>
+            </div>
+            <div class="viz-step">
+              <p class="viz-step-title">5. test / run / plot</p>
+              <p class="viz-step-meta">先验证静态曲线，再运行动态场景，最后接六自由度数据。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="viz-panel half">
+          <h2>三条主要使用路线</h2>
+          <table class="viz-table">
+            <thead>
+              <tr><th>目的</th><th>入口</th><th>主要调用链</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>看静态公式</td>
+                <td><code>test_vrs_static.m</code></td>
+                <td><code>params → qs → numeric</code></td>
+              </tr>
+              <tr>
+                <td>看动态进入/改出</td>
+                <td><code>run_vrs_testbench.m</code></td>
+                <td><code>init → slx → numeric</code></td>
+              </tr>
+              <tr>
+                <td>看已有模型</td>
+                <td><code>open_vrs_model.m</code></td>
+                <td><code>init → open slx</code></td>
+              </tr>
+              <tr>
+                <td>以后画六自由度结果</td>
+                <td><code>plot_vrs_6dof_comparison.m</code></td>
+                <td><code>六自由度数据 → 综合图</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="viz-panel">
+          <h2>最重要的数据流</h2>
+          <div class="mermaid">
+flowchart LR
+  A["输入<br/>V_H、V_d、T"] --> B["Johnson 数值核心"]
+  B --> C["基线诱导速度<br/>v_base"]
+  B --> D["准定常目标<br/>v_i,QS"]
+  D --> E["一阶动态入流<br/>dv_i/dt=(v_i,QS-v_i)/tau"]
+  E --> F["实际诱导速度<br/>v_i"]
+  F -. "未来反馈" .-> G["主旋翼气动力<br/>重新计算 T 与力矩"]
+  G -. "力和力矩" .-> H["六自由度动力学"]
+  H -. "新的 V_H、V_d" .-> A
+          </div>
+        </article>
+
+        <article class="viz-panel">
+          <h2>当前边界</h2>
+          <div class="viz-callout warning">
+            当前目录只有独立 VRS 测试台，没有六自由度模型。因此
+            <code>plot_vrs_6dof_comparison.m</code> 目前不参与现有仿真调用链；
+            它要等六自由度模型产生 <code>t、V_d、T、v_i</code> 后才使用。
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "neutral", flowchart: { curve: "basis" } });
+    </script>
+  </body>
+</html>
